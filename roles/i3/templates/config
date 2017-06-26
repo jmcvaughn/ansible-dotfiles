@@ -1,0 +1,174 @@
+# Fonts
+font pango:Source Code Pro Semibold {{ i3.font_size }}
+
+# Colours: gruvbox dark - https://github.com/morhetz/gruvbox/
+# bg, dark to light
+set $bg0_h   #1d2021
+set $bg      #282828
+set $bg0     #282828
+set $bg0_s   #32302f
+set $bg1     #3c3836
+set $bg2     #504945
+set $bg3     #665c54
+set $bg4     #7c6f64
+# fg, dark to light
+set $fg4     #a89984
+set $fg3     #bdae93
+set $fg2     #d5c4a1
+set $fg1     #ebdbb2
+set $fg      #ebdbb2
+set $fg0     #fbf1c7
+# grey
+set $dgrey   #928374
+set $grey    #928374
+set $lgrey   #a89984
+# red
+set $nred    #cc241d
+set $bred    #fb4934
+# green
+set $ggreen  #98971a
+set $bgreen  #b8bb26
+# yellow
+set $nyellow #d79921
+set $byellow #fabd2f
+# blue
+set $nblue   #458588
+set $bblue   #83a598
+# purple
+set $npurple #b16286
+set $bpurple #d3869b
+# aqua
+set $naqua   #689d6a
+set $faqua   #8ec07c
+# orange
+set $dorange #d65d0e
+set $lorange #fe8019
+
+# Default modifier key
+set $mod Mod1
+
+# Applications
+bindsym $mod+Return exec "termite"
+bindsym $mod+d exec --no-startup-id "qutebrowser --backend webengine"
+bindsym $mod+Shift+d exec --no-startup-id "qutebrowser"
+bindsym $mod+f exec --no-startup-id "chromium"
+bindsym $mod+Shift+f exec --no-startup-id "chromium --incognito"
+bindsym $mod+c exec "telegram-desktop"
+bindsym $mod+Shift+q kill
+
+# Rofi
+bindsym $mod+space exec \
+  "i3-dmenu-desktop --entry-type=name --dmenu='rofi -dmenu -p application:'"
+bindsym $mod+s exec "rofi -show ssh"
+bindsym $mod+w exec "rofi -show window"
+
+# Focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+q focus parent
+bindsym $mod+a focus child
+focus_follows_mouse no
+# Toggle focus between floating/tiled
+bindsym $mod+t focus mode_toggle
+# Switch to urgent windows on any workspace
+focus_on_window_activation focus
+
+# Manipulation
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+t floating toggle
+# Mod key to move floating windows with mouse
+floating_modifier $mod
+# Split new windows, horizontal or vertical
+bindsym $mod+g split h
+bindsym $mod+b split v
+# Change current container layout
+#bindsym $mod+s layout stacking
+bindsym $mod+z layout tabbed
+bindsym $mod+x layout toggle split
+
+# Workspace switching
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# Resizing (can also be done with mouse at container borders)
+bindsym $mod+r mode "resize"
+mode "resize" {
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
+    bindsym j resize shrink height 10 px or 10 ppt
+    bindsym k resize grow height 10 px or 10 ppt
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# Theming
+gaps inner 10
+gaps outer  5
+# Disable titlebars, set border
+for_window [class="^.*"] border pixel 4
+# <colorclass>          <border> <background> <text>  <indicator> <child_border>
+client.focused          $bg4     $bg4         $bg     $fg3        $bg4
+client.focused_inactive $bg1     $bg1         $grey   $bg2        $bg1
+client.unfocused        $bg1     $bg0_h       $bg3    $bg0_h      $bg0_h
+client.urgent           $bred    $bred        $bg0_h  $bred       $bred
+client.background       $bg
+
+# System control
+bindsym $mod+Shift+s mode "system"
+mode "system" {
+    bindsym c reload
+    bindsym e exec i3-msg exit
+    bindsym i restart
+    bindsym p exec --no-startup-id systemctl poweroff
+    bindsym r exec --no-startup-id systemctl reboot
+    bindsym s mode "default"; exec --no-startup-id systemctl suspend
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    # Background colour bg0_h
+    bindsym l mode "default"; exec --no-startup-id i3lock \
+      --inactivity-timeout 15 --no-unlock-indicator --color=1d2021
+}
+
+# Volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute 0 toggle
+
+# i3 control
+bindsym $mod+Shift+c reload
+# Restart in place
+bindsym $mod+Shift+r restart
+
+# Ansible-managed
+
+# Background
+exec --no-startup-id hsetroot -solid "$bg0_h"
+
+# Compton
+exec --no-startup-id compton --daemon
+
+# polybar
+exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"

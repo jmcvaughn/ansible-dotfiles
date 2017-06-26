@@ -1,0 +1,115 @@
+; polybar configuration - see https://github.com/jaagr/polybar/wiki/
+
+[colours]
+; gruvbox dark - https://github.com/morhetz/gruvbox/
+; bg, dark to light
+bg0_h   = #1d2021
+bg      = #282828
+bg0     = #282828
+bg0_s   = #32302f
+bg1     = #3c3836
+bg2     = #504945
+bg3     = #665c54
+bg4     = #7c6f64
+; fg, dark to light
+fg4     = #a89984
+fg3     = #bdae93
+fg2     = #d5c4a1
+fg1     = #ebdbb2
+fg      = #ebdbb2
+fg0     = #fbf1c7
+; grey
+dgrey   = #928374
+grey    = #928374
+lgrey   = #a89984
+; red
+nred    = #cc241d
+bred    = #fb4934
+; green
+ggreen  = #98971a
+bgreen  = #b8bb26
+; yellow
+nyellow = #d79921
+byellow = #fabd2f
+; blue
+nblue   = #458588
+bblue   = #83a598
+; purple
+npurple = #b16286
+bpurple = #d3869b
+; aqua
+naqua   = #689d6a
+faqua   = #8ec07c
+; orange
+dorange = #d65d0e
+lorange = #fe8019
+
+[module/battery]
+type               = internal/battery
+format-charging    =  <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full        = <ramp-capacity> <label-full>
+ramp-capacity-0    = 
+ramp-capacity-1    = 
+ramp-capacity-2    = 
+ramp-capacity-3    = 
+ramp-capacity-4    = 
+
+[module/date]
+type     = internal/date
+time     = %H:%M:%S
+date-alt = %A %F
+format   =  <label>
+label    = %time%%date%
+
+[module/i3]
+type                       = internal/i3
+enable-click               = true
+enable-scroll              = false
+label-mode-foreground      = ${colours.bg0_h}
+label-mode-background      = ${colours.bred}
+label-mode-padding         = 1
+label-focused              = %index%
+label-focused-foreground   = ${colours.bg}
+label-focused-background   = ${colours.bg4}
+label-focused-padding      = 1
+label-unfocused            = %index%
+label-unfocused-foreground = ${colours.bg3}
+label-unfocused-background = ${colours.bg0_h}
+label-unfocused-padding    = 1
+label-urgent               = %index%
+label-urgent-foreground    = ${colours.bg0_h}
+label-urgent-background    = ${colours.bred}
+label-urgent-padding       = 1
+
+[module/wifi]
+type                = internal/network
+interface           = {{ polybar.wifi_interface }}
+interval            = 5
+format-connected    =  <label-connected>
+label-connected     = %essid%
+format-disconnected =  <label-disconnected>
+label-disconnected  = (none)
+
+[module/volume]
+type          = internal/volume
+format-volume = <ramp-volume> <label-volume>
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+format-muted  =  <label-muted>
+
+[module/xwindow]
+type = internal/xwindow
+label-maxlen = {{ polybar.title_length }}
+
+[bar/bar]
+background     = ${colours.bg}
+foreground     = ${colours.fg}
+padding        = 3
+module-margin  = 1
+font-0         = "SourceCodePro:weight=medium:size={{ polybar.font_size }};2"
+font-1         = "FontAwesome:size={{ polybar.font_size }};2"
+modules-left   = i3
+modules-center = xwindow
+modules-right  = {{ polybar.modules_right }}

@@ -1,0 +1,16 @@
+- name: Copy keyboard brightness script to i3 configuration directory
+  copy:
+    src: keyboard_brightness.sh
+    dest: '{{ config_dir }}/i3/keyboard_brightness.sh'
+    mode: 0755
+
+- name: Add i3 keyboard brightness keymaps
+  blockinfile:
+    path: '{{ config_dir }}/i3/config'
+    insertafter: '^# Ansible-managed$'
+    marker: '# {mark} Ansible-managed block: Add i3 keyboard brightness keymaps'
+    block: |
+      bindsym XF86KbdBrightnessUp exec --no-startup-id \
+        "$HOME/.config/i3/keyboard_brightness.sh up"
+      bindsym XF86KbdBrightnessDown exec --no-startup-id \
+        "$HOME/.config/i3/keyboard_brightness.sh down"

@@ -1,0 +1,16 @@
+! Pok3r key bindings
+keycode 22 = BackSpace BackSpace Delete Delete BackSpace BackSpace BackSpace BackSpace
+keycode 30 = u U Prior Prior downarrow uparrow downarrow
+keycode 32 = o O Next Next oslash Oslash oslash
+keycode 42 = g G Home Home eng ENG eng
+keycode 56 = b B End End rightdoublequotemark rightsinglequotemark rightdoublequotemark
+! Remapped from Caps_Lock, allows use like a Fn key
+keycode 66 = Mode_switch NoSymbol Mode_switch
+
+! vi key bindings
+keycode 43 = h H Left Left hstroke Hstroke hstroke
+keycode 44 = j J Down Down dead_hook dead_horn dead_hook
+keycode 45 = k K Up Up kra ampersand kra 
+keycode 46 = l L Right Right lstroke Lstroke lstroke
+! Other custom key bindings
+keycode 26 = e E Escape Escape e E e E e E e E e E e E

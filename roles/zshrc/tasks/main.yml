@@ -1,0 +1,49 @@
+- name: Create zshrc configuration directory
+  file:
+    path: ~/.zshrc.d/
+    state: directory
+
+- name: Copy zshrc configuration files
+  copy:
+    src: '{{ item }}'
+    dest: ~/.zshrc.d/
+  with_items:
+    - 10-pre_cmds.zsh
+    - 20-options.zsh
+    - 30-completions.zsh
+    - 40-zle.zsh
+    - 50-variables.zsh
+    - 60-user_functions.zsh
+    - 70-aliases.zsh
+
+- name: Copy zshrc
+  copy:
+    src: zshrc
+    dest: ~/.zshrc
+
+- name: Create Zsh prompts configuration file from template
+  template:
+    src: prompts.zsh
+    dest: ~/.zshrc.d/
+
+- name: Add Termite directory setting to zshrc
+  blockinfile:
+    path: ~/.zshrc
+    insertafter: '^# Ansible-managed$'
+    marker: '# {mark} Ansible-managed block: Add Termite directory setting'
+    block: |
+      # Sets Termite directory for new windows
+      if [ -z "$SSH_TTY" ] && [ -z "$SUDO_UID" ] \
+        && [ "$TERM" = "xterm-termite" ]; then
+          source /etc/profile.d/vte.sh
+          __vte_osc7
+      fi
+  when: (zshrc.emulator is defined) and (zshrc.emulator == 'termite')
+
+- name: Add custom entries to zshrc
+  blockinfile:
+    path: ~/.zshrc
+    insertafter: '^# Ansible-managed$'
+    marker: '# {mark} Ansible-managed block: Add custom entries'
+    block: '{{ zshrc.custom }}'
+  when: zshrc.custom is defined

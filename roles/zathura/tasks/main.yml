@@ -1,0 +1,9 @@
+- name: Create zathura configuration directory
+  file:
+    path: '{{ config_dir }}/zathura/'
+    state: directory
+
+- name: Create zathura configuration file from template
+  template:
+    src: zathurarc
+    dest: '{{ config_dir }}/zathura/zathurarc'

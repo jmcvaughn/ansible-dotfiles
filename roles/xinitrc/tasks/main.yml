@@ -1,0 +1,14 @@
+- name: Copy xinitrc configuration file
+  copy:
+    src: xinitrc
+    dest: ~/.xinitrc
+
+- name: Enable MacBookAir6,2 ICC profile
+  blockinfile:
+    path: ~/.xinitrc
+    insertbefore: '$.*^'
+    marker: '# {mark} Ansible-managed block: Enable MacBookAir6,2 ICC profile'
+    block: |
+      /usr/bin/xcalib -display :0 \
+        "/usr/local/share/color/icc/Color LCD-933C106C-08BC-09AA-F750-C2A74A119DEF.icc"
+  when: ansible_product_name | match('MacBookAir6,2')

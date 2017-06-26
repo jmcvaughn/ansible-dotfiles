@@ -1,0 +1,4 @@
+zprofile:
+  # Key repeat settings - see xserver(1)
+  repeat_delay: 275     # ardelay (ms)
+  repeat_interval: 37   # arinterval (ms), 1000ms/27Hz = 37ms intervals

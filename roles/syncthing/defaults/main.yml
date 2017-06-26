@@ -1,0 +1,3 @@
+syncthing:
+  gui_address: 127.0.0.1:8384
+  service_type: user

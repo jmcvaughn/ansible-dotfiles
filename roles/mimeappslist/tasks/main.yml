@@ -1,0 +1,4 @@
+- name: Copy mimeapps.list configuration file
+  copy:
+    src: mimeapps.list
+    dest: '{{ config_dir }}/mimeapps.list'

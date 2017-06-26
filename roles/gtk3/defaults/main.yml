@@ -1,0 +1,3 @@
+gtk3:
+  font_size: 10
+  terminal_padding: '15px'

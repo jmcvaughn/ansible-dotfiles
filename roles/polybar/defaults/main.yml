@@ -1,0 +1,5 @@
+polybar:
+  wifi_interface: None
+  title_length: 0
+  font_size: 10
+  modules_right: 'volume wifi battery date'

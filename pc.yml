@@ -1,0 +1,23 @@
+- include: base.yml
+
+- hosts: '{{ host }}'
+  become: True
+  become_user: '{{ user }}'
+  roles:
+    - { role: zprofile, tags: zprofile }
+    - { role: xinitrc, tags: xinitrc }
+    - { role: xmodmap, tags: xmodmap }
+    - { role: xresources, tags: xresources }
+    - { role: i3, tags: i3 }
+    - { role: compton, tags: compton }
+    - { role: polybar, tags: polybar }
+    - { role: gtk2, tags: gtk2 }
+    - { role: gtk3, tags: gtk3 }
+    - { role: termite, tags: termite }
+    - { role: rofi, tags: rofi }
+    - { role: mimeappslist, tags: mimeappslist }
+    - { role: mpv, tags: mpv }
+    - { role: qutebrowser, tags: qutebrowser }
+    - { role: remmina, tags: remmina }
+    - { role: zathura, tags: zathura }
+    - { role: syncthing, tags: syncthing }

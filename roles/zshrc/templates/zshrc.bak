@@ -1,0 +1,176 @@
+# Options - see zshoptions(1)
+## Changing Directories
+setopt auto_cd
+## Completion
+setopt list_packed
+## Expansion and Globbing
+setopt brace_ccl extended_glob glob_star_short hist_subst_pattern mark_dirs \
+       numeric_glob_sort rc_expand_param
+## History
+setopt extended_history hist_expire_dups_first hist_fcntl_lock \
+       hist_find_no_dups hist_ignore_dups hist_ignore_space hist_no_store \
+       hist_reduce_blanks
+## Input/Output
+setopt correct interactive_comments
+## Prompting
+setopt prompt_subst
+## ZLE
+unsetopt beep
+
+# Completion - see zshcompsys(1)
+autoload -Uz compinit
+compinit
+zstyle ':completion:*' menu select
+
+# vcs_info - see zshcontrib(1)
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' formats '%F{magenta}(%b)%f%c%u '
+zstyle ':vcs_info:*' actionformats '%F{magenta}(%b)%f%c%u %B%a%%b '
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' check-for-changes true
+## Unicode: U+25CF
+zstyle ':vcs_info:*' stagedstr '%F{green}●%f'
+zstyle ':vcs_info:*' unstagedstr '%F{red}●%f'
+
+# Window titles
+## Run before displaying prompt
+precmd() {
+    printf '\33]2;%s\007' "$(echo ${TTY:9}): $USER@$HOST:$PWD"
+    vcs_info
+}
+## Run before running command
+preexec() {
+    printf '\33]2;%s\007' "$(echo ${TTY:9}): $1 ($USER@$HOST:$PWD)"
+}
+
+# Prompts - "~ % " or "~ (root) # "
+PROMPT_COLOUR={{ zshrc.prompt_colour }}
+PROMPT=\
+'%B%F{$PROMPT_COLOUR}%~%f%b ${vcs_info_msg_0_}%B%(!.%F{red}(root) %#%f.%#)%b '
+
+# ZLE - see zshzle(1)
+## Keymaps
+bindkey -v                      # set 'main' keymap to viins 
+## User-defined widgets
+historyup-vicmd() {             # switch to vicmd and search on up arrow
+    zle -K vicmd
+    zle history-beginning-search-backward
+}
+historydown-vicmd() {           # switch to vicmd and search on down arrow
+    zle -K vicmd
+    zle history-beginning-search-forward
+}
+expandorcomplete-vicmd() {      # switch to main and expand/complete
+    zle -K main
+    zle expand-or-complete
+}
+### Widget declarations
+zle -N historyup-vicmd
+zle -N historydown-vicmd
+zle -N expandorcomplete-vicmd
+### Key bindings
+#### Control+Arrow and vi bindings
+bindkey -M main  "^[[A" historyup-vicmd 
+bindkey -M vicmd "^[[A" historyup-vicmd 
+bindkey -M vicmd "k"    historyup-vicmd 
+bindkey -M main  "^[[B" historydown-vicmd
+bindkey -M vicmd "^[[B" historydown-vicmd
+bindkey -M vicmd "j"    historydown-vicmd
+#### Tab
+bindkey -M vicmd "\t" expandorcomplete-vicmd
+## Standard Widgets
+### Movement
+#### Shift/Control+Arrow
+bindkey -M main "^[[1;2D" vi-backward-word
+bindkey -M main "^[[1;5D" vi-backward-word
+bindkey -M main "^[[1;2C" vi-forward-word
+bindkey -M main "^[[1;5C" vi-forward-word
+#### End
+bindkey -M main "^[[F" vi-end-of-line
+### Modifying Text
+#### Backspace
+bindkey -M main "^?" backward-delete-char
+#### Del
+bindkey -M main  "^[[3~" delete-char
+bindkey -M vicmd "^[[3~" delete-char
+### Completion
+bindkey -M main " " magic-space
+### Miscellaneous
+#### Home
+bindkey -M main "^[[H" vi-digit-or-beginning-of-line
+
+# Variables
+## Environment
+export CDPATH="$HOME"
+export EDITOR="/usr/bin/nvim"
+export PATH="$PATH:$HOME/bin"
+### Pagers
+export PAGER="/usr/bin/col --no-backspaces | /usr/bin/nvim -c 'set readonly'"
+export GIT_PAGER="/usr/bin/less"
+export MANPAGER="/usr/bin/nvim -c 'set filetype=man' -"
+export SYSTEMD_PAGER="/usr/bin/less"
+## Zsh history
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=15000
+SAVEHIST=10000
+
+# User functions
+## Open multiple specified files using xdg-open
+o() {
+    for i; do
+        (xdg-open $i &) &> /dev/null
+    done
+}
+
+# User aliases
+## cp
+alias cp="cp --reflink=auto --sparse=always"
+## ls
+alias l="ls --color=auto"
+alias la="ls --all --color=auto"
+alias lal="ls -l --all --color=auto --human-readable"
+alias lA="ls --almost-all --color=auto"
+alias lAl="ls -l --almost-all --color=auto --human-readable"
+alias ll="ls -l --color=auto --human-readable"
+alias lla="ls -l --all --color=auto --human-readable"
+alias llA="ls -l --almost-all --color=auto --human-readable"
+alias ls="ls --color=auto"
+## source and sudo
+alias .="source"
+alias s="sudo "
+alias si="sudo -i"
+alias sudo="sudo "
+## Applications
+alias aria2c="aria2c --seed-time=0"
+alias ddi="sudo dd bs=16K conv=fsync status=progress"
+alias g="grep"
+alias h="fc -liD -31"
+alias pg="ping google.com"
+alias scpk="scp -o UserKnownHostsFile=/dev/null"
+alias sshk="ssh -o UserKnownHostsFile=/dev/null"
+alias ud="pacaur -Syu"
+alias virsh="virsh --connect qemu:///system"
+alias virt-install="virt-install --connect qemu:///system"
+alias xc="xclip -rmlastnl -selection clipboard"
+## File viewing/editing
+alias c="cat"
+alias p="$PAGER"
+alias v="nvim"
+## Process management
+alias b="bg"
+alias f="fg"
+alias j="jobs"
+alias k="kill"
+alias k9="kill -9"
+alias t="htop"
+alias top="htop"
+alias u="ps -fu $USER"
+
+# Ansible-managed
+
+# Sourced scripts
+## pkgfile
+source /usr/share/doc/pkgfile/command-not-found.zsh
+## zsh-syntax-highlighting (must be at end of .zshrc)
+source \
+  /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

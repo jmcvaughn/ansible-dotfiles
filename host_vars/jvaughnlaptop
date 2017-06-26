@@ -1,0 +1,15 @@
+i3:
+  font_size: 10
+
+polybar_local:
+  wifi_interface: wlp3s0
+  title_length: 75
+  modules_right: volume wifi battery date
+
+qutebrowser_local:
+  font_size: 10pt
+
+zshrc_local:
+  prompt_colour: green
+
+# vim: filetype=yaml

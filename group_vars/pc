@@ -1,0 +1,55 @@
+gtk2:
+  font_size: 9
+
+gtk3:
+  font_size: 10
+  terminal_padding: 15px
+
+rofi:
+  font_size: 10
+
+syncthing:
+  gui_address: 127.0.0.1:8384
+  service_type: user
+
+termite:
+  font_size: 10
+
+xresources:
+  cursor_size: 16
+
+zathura:
+  font_size: 10
+
+zprofile:
+  repeat_delay: 275
+  repeat_interval: 37
+
+# polybar
+polybar_pc:
+  font_size: 10
+
+polybar: '{{ polybar_pc | combine(polybar_local) }}'
+
+# qutebrowser
+qutebrowser_pc:
+  download_directory: ~/downloads/
+  font: Source Code Pro
+  hint_size: 13px
+
+qutebrowser: '{{ qutebrowser_pc | combine(qutebrowser_local) }}'
+
+# zshrc
+zshrc_pc:
+  emulator: termite
+  custom: |
+    alias gitsvclone="git clone jvaughnserver:git/$1/ $HOME/git/$1/"
+    gitpullall() {
+        for i in $(ls --directory $HOME/git/*); do
+            git -C $i pull
+        done
+    }
+
+zshrc: '{{ zshrc_pc | combine(zshrc_local) }}'
+
+# vim: filetype=yaml

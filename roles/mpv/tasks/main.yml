@@ -1,0 +1,9 @@
+- name: Create mpv configuration directory
+  file:
+    path: '{{ config_dir }}/mpv/'
+    state: directory
+
+- name: Copy mpv input.conf configuration file
+  copy:
+    src: input.conf
+    dest: '{{ config_dir }}/mpv/input.conf'

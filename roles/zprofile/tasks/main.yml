@@ -1,0 +1,4 @@
+- name: Create zprofile from template
+  template:
+    src: zprofile
+    dest: ~/.zprofile

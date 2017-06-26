@@ -1,0 +1,9 @@
+- name: Create Remmina configuration directory
+  file:
+    path: '{{ config_dir }}/remmina/'
+    state: directory
+
+- name: Copy Remmina configuration file
+  copy:
+    src: remmina.pref
+    dest: '{{ config_dir }}/remmina/remmina.pref'

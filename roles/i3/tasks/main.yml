@@ -1,0 +1,27 @@
+- name: Create i3 configuration directory
+  file:
+    path: '{{ config_dir }}/i3/'
+    state: directory
+
+- name: Create i3 configuration file from template
+  template:
+    src: config
+    dest: '{{ config_dir }}/i3/config'
+
+- name: Check intel_backlight sys directory exists
+  stat:
+    path: /sys/class/backlight/intel_backlight/
+  register: intel_backlight
+
+- name: Enable display brightness manipulation
+  include: display_brightness.yml
+  when: intel_backlight.stat.isdir is defined and intel_backlight.stat.isdir
+
+- name: Check MacBook keyboard sys directory exists
+  stat:
+    path: /sys/class/leds/smc::kbd_backlight/
+  register: kbd_backlight
+
+- name: Enable MacBook keyboard brightness manipulation
+  include: macbook_kbd_brightness.yml
+  when: kbd_backlight.stat.isdir is defined and kbd_backlight.stat.isdir

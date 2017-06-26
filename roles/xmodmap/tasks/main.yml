@@ -1,0 +1,4 @@
+- name: Copy Xmodmap configuration file
+  copy:
+    src: xmodmap
+    dest: ~/.Xmodmap

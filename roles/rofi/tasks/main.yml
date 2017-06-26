@@ -1,0 +1,9 @@
+- name: Create Rofi configuration directory
+  file:
+    path: '{{ config_dir }}/rofi/'
+    state: directory
+
+- name: Create Rofi configuration file from template
+  template:
+    src: config
+    dest: '{{ config_dir }}/rofi/config'

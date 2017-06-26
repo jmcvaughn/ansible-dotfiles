@@ -1,0 +1,7 @@
+- name: Set global (user) git configuration
+  git_config:
+    name: '{{ item.name }}'
+    value: '{{ item.value }}'
+    scope: global
+  with_items: '{{ gitconfig }}'
+  when: gitconfig is defined

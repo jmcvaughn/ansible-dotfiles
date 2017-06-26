@@ -1,0 +1,16 @@
+zshrc_d="$HOME/.zshrc.d/"
+
+# Source all files in $HOME/.zshrc.d/
+if [ -d $zshrc_d ]; then
+    for file in $zshrc_d/*.zsh; do
+        source $file;
+    done
+fi
+
+# Ansible-managed
+
+# pkgfile - shows which missing package provides command
+source /usr/share/doc/pkgfile/command-not-found.zsh
+# zsh-syntax-highlighting must be at end of zshrc
+source \
+  /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

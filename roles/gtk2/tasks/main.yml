@@ -1,0 +1,4 @@
+- name: Create GTK+ 2 configuration file from template
+  template:
+    src: gtkrc-2.0
+    dest: ~/.gtkrc-2.0

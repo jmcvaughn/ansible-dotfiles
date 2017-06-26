@@ -1,0 +1,23 @@
+! Colours: gruvbox dark - https://github.com/morhetz/gruvbox/
+                        ! bg0    bg4      bg1
+rofi.color-window:      #282828, #7c6f64, #3c3836
+
+                        ! bg0             bg0      bg2
+rofi.color-normal:      #282828, #ebdbb2, #282828, #504945, #ebdbb2
+rofi.color-active:      #282828, #b8bb26, #282828, #504945, #b8bb26
+rofi.color-urgent:      #282828, #fb4934, #282828, #504945, #fb4934
+                        ! normal: fg/fg1, active: bgreen, urgent: bred
+
+! Theming
+rofi.font:              Source Code Pro {{ rofi.font_size }}
+rofi.separator-style:   solid
+
+! Layout
+rofi.width:             700
+
+! SSH
+rofi.ssh-command:       {terminal} -e "{ssh-client} {host}"
+rofi.parse-known-hosts: false
+
+! History and Sorting
+rofi.disable-history:   true

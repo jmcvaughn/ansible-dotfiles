@@ -1,0 +1,4 @@
+- name: Copy compton configuration file
+  copy:
+    src: compton.conf
+    dest: '{{ config_dir }}/compton.conf'

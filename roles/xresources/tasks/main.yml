@@ -1,0 +1,4 @@
+- name: Create Xresources from template
+  template:
+    src: xresources
+    dest: ~/.Xresources

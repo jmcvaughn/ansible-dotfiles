@@ -1,0 +1,27 @@
+- name: Create Syncthing configuration directory
+  file:
+    path: '{{ config_dir }}/syncthing/'
+    state: directory
+
+- name: Create Syncthing configuration file from template
+  template:
+    src: config.xml.j2
+    dest: '{{ config_dir }}/syncthing/config.xml'
+    force: False
+
+- name: Enable and start Syncthing service (user)
+  systemd:
+    name: syncthing.service
+    user: True
+    enabled: True
+    state: started
+  when: syncthing.service_type == 'user'
+
+- name: Enable and start Syncthing service (system)
+  become: True
+  become_user: root
+  systemd:
+    name: 'syncthing@{{ user }}.service'
+    enabled: True
+    state: started
+  when: syncthing.service_type == 'system'

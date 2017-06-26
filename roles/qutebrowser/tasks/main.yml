@@ -1,0 +1,14 @@
+- name: Create downloads directory
+  file:
+    path: '{{ qutebrowser.download_directory }}'
+    state: directory
+
+- name: Create qutebrowser configuration directory
+  file:
+    path: '{{ config_dir }}/qutebrowser/'
+    state: directory
+
+- name: Create qutebrowser configuration file from template
+  template:
+    src: qutebrowser.conf
+    dest: '{{ config_dir }}/qutebrowser/qutebrowser.conf'

@@ -1,0 +1,44 @@
+[options]
+cursor_blink = off
+fullscreen   = false
+font         = Source Code Pro {{ termite.font_size }}
+
+[colors]
+# gruvbox dark - https://github.com/morhetz/gruvbox-contrib/
+# background (contrast: hard #1d2021, medium #282828, soft #32302f)
+background = #282828
+# foreground
+foreground      = #ebdbb2
+foreground_bold = #ebdbb2
+# dark0 + gray
+color0 = #282828
+color8 = #928374
+# neutral_red + bright_red
+color1 = #cc241d
+color9 = #fb4934
+# neutral_green + bright_green
+color2  = #98971a
+color10 = #b8bb26
+# neutral_yellow + bright_yellow
+color3  = #d79921
+color11 = #fabd2f
+# neutral_blue + bright_blue
+color4  = #458588
+color12 = #83a598
+# neutral_purple + bright_purple
+color5  = #b16286
+color13 = #d3869b
+# neutral_aqua + faded_aqua
+color6  = #689d6a
+color14 = #8ec07c
+# light4 + light1
+color7  = #a89984
+color15 = #ebdbb2
+
+[hints]
+foreground        = #1d2021
+background        = #fabd2f
+active_foreground = #1d2021
+active_background = #fabd2f
+border_width      = 0
+roundness         = 0

@@ -1,0 +1,15 @@
+- name: Create polybar configuration directory
+  file:
+    path: '{{ config_dir }}/polybar/'
+    state: directory
+
+- name: Create polybar configuration file from template
+  template:
+    src: config
+    dest: '{{ config_dir }}/polybar/config'
+
+- name: Copy polybar launcher script
+  copy:
+    src: launch.sh
+    dest: '{{ config_dir }}/polybar/launch.sh'
+    mode: 0755

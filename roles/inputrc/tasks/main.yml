@@ -1,0 +1,4 @@
+- name: Copy inputrc configuration file
+  copy:
+    src: inputrc
+    dest: ~/.inputrc

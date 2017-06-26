@@ -1,0 +1,9 @@
+- name: Create termite configuration directory
+  file:
+    path: '{{ config_dir }}/termite/'
+    state: directory
+
+- name: Create termite configuration file from template
+  template:
+    src: config
+    dest: '{{ config_dir }}/termite/config'

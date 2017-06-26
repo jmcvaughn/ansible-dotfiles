@@ -1,0 +1,7 @@
+user: jamesvaughn
+
+gitconfig:
+  - { name: 'user.name', value: James Vaughn }
+  - { name: 'user.email', value: v0rngit@gmail.com }
+
+# vim: filetype=yaml
