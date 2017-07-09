@@ -3,7 +3,7 @@ i3:
 
 polybar_local:
   wifi_interface: wlp3s0
-  title_length: 75
+  title_length: 55
   modules_right: volume wifi battery date
 
 qutebrowser_local:
