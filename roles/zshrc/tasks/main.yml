@@ -1,7 +1,10 @@
-- name: Create zshrc configuration directory
+- name: Create or clear zshrc configuration directory
   file:
     path: ~/.zshrc.d/
-    state: directory
+    state: '{{ item }}'
+  with_items:
+    - absent
+    - directory
 
 - name: Copy zshrc configuration files
   copy:
