@@ -25,6 +25,12 @@ zprofile:
   repeat_delay: 275
   repeat_interval: 37
 
+# i3
+i3_pc:
+  browser: firefox
+
+i3: '{{ i3_pc | combine(i3_local) }}'
+
 # polybar
 polybar_pc:
   font_size: 10

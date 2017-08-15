@@ -1,2 +1,5 @@
 i3:
+  # Secondary browser: $mod+f and $mod+Shift+f for normal and private modes
+  # respectively. Valid options are 'firefox' and 'chromium'
+  browser: firefox
   font_size: 9

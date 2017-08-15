@@ -16,6 +16,7 @@ image/x-portable-graymap=imv.desktop
 image/x-portable-pixmap=imv.desktop
 image/x-tga=imv.desktop
 image/x-xbitmap=imv.desktop
+
 ; mpv
 application/ogg=mpv.desktop
 application/x-ogg=mpv.desktop
@@ -86,6 +87,7 @@ audio/ac3=mpv.desktop
 video/mp2t=mpv.desktop
 audio/flac=mpv.desktop
 audio/mp4=mpv.desktop
+
 ; qutebrowser
 text/html=qutebrowser.desktop
 text/xml=qutebrowser.desktop
@@ -94,5 +96,6 @@ application/xml=qutebrowser.desktop
 application/rdf+xml=qutebrowser.desktop
 x-scheme-handler/http=qutebrowser.desktop
 x-scheme-handler/https=qutebrowser.desktop
+
 ; Zathura
 application/pdf=zathura.desktop

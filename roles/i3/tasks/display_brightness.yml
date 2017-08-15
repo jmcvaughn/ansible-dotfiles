@@ -11,6 +11,6 @@
     marker: '# {mark} Ansible-managed block: Add i3 display brightness keymaps'
     block: |
       bindsym XF86MonBrightnessUp exec --no-startup-id \
-        "$HOME/.config/i3/display_brightness.sh up"
+          "$HOME/.config/i3/display_brightness.sh up"
       bindsym XF86MonBrightnessDown exec --no-startup-id \
-        "$HOME/.config/i3/display_brightness.sh down"
+          "$HOME/.config/i3/display_brightness.sh down"

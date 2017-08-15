@@ -51,14 +51,19 @@ set $mod Mod1
 bindsym $mod+Return exec "termite"
 bindsym $mod+d exec --no-startup-id "qutebrowser --backend webengine"
 bindsym $mod+Shift+d exec --no-startup-id "qutebrowser"
+{% if i3.browser == 'firefox' %}
+bindsym $mod+f exec --no-startup-id "firefox"
+bindsym $mod+Shift+f exec --no-startup-id "firefox --private-window"
+{% elif i3.browser == 'chromium' %}
 bindsym $mod+f exec --no-startup-id "chromium"
 bindsym $mod+Shift+f exec --no-startup-id "chromium --incognito"
+{% endif %}
 bindsym $mod+c exec "telegram-desktop"
 bindsym $mod+Shift+q kill
 
 # Rofi
 bindsym $mod+space exec \
-  "i3-dmenu-desktop --entry-type=name --dmenu='rofi -dmenu -p application:'"
+    "i3-dmenu-desktop --entry-type=name --dmenu='rofi -dmenu -p application:'"
 bindsym $mod+s exec "rofi -show ssh"
 bindsym $mod+w exec "rofi -show window"
 
@@ -155,7 +160,7 @@ mode "system" {
 # Volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
-bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute 0 toggle
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
 # i3 control
 bindsym $mod+Shift+c reload

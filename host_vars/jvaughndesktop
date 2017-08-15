@@ -1,4 +1,4 @@
-i3:
+i3_local:
   font_size: 9
 
 polybar_local:
