@@ -16,6 +16,7 @@
     - { role: termite, tags: termite }
     - { role: rofi, tags: rofi }
     - { role: mimeappslist, tags: mimeappslist }
+    - { role: xdg_dirs, tags: xdg_dirs }
     - { role: mpv, tags: mpv }
     - { role: qutebrowser, tags: qutebrowser }
     - { role: remmina, tags: remmina }

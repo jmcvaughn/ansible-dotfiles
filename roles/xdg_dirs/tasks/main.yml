@@ -1,0 +1,4 @@
+- name: Copy XDG user directories configuration file
+  copy:
+    src: user-dirs.dirs
+    dest: '{{ config_dir }}/user-dirs.dirs'
