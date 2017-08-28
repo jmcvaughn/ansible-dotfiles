@@ -52,9 +52,9 @@ compression ratios.
 ```
 # zpool create zpssd \
 -fo ashift=13 \
--O atime=off \
 -O compression=lz4 \
 -O xattr=sa \
+-O relatime=on \
 -m none \
 mirror /dev/disk/by-id/DISK-0.1 /dev/disk/by-id/DISK-0.2
 
