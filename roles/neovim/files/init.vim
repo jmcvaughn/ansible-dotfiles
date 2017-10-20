@@ -1,46 +1,90 @@
+" Set 'runtimepath' first for any files installed under Vim's directories, e.g.
+" colourschemes
 set runtimepath+=/usr/share/vim/vimfiles
 
-" gruvbox theme: https://github.com/morhetz/gruvbox/wiki/Configuration/
-colorscheme gruvbox
-let g:gruvbox_italic=1
-let g:gruvbox_italicize_comments=0
 
-set autochdir
-set background=dark
-set complete+=k
+" Theming
+" gruvbox theme: https://github.com/morhetz/gruvbox/wiki/Configuration/
+let g:gruvbox_italic = 1
+let g:gruvbox_vert_split = 'bg0'
+let g:gruvbox_italicize_comments = 0
+let g:gruvbox_invert_selection = 0
+let g:gruvbox_invert_tabline = 1      " Tab line background matches status line
+
+colorscheme gruvbox
+
+set background=dark                 " Dark mode
+set termguicolors                   " Enable true-colour support
+
+
+" Options
+" File saving and undo history
 set confirm
-set dictionary+=/usr/share/hunspell/en_GB.dic
-set formatoptions+=1
+setlocal undofile
+
+" Visual guides
+set cursorline
 set guicursor=
-set ignorecase
-set iskeyword&
-set mouse=a
 set number
-set path+=**
-set ruler
-set scrolloff=15
-let &showbreak='>> '
-set smartcase
-set spelllang=en_gb,en_us
-set termguicolors
-set textwidth=80
+set relativenumber
+let &showbreak = '\ '
+
+" Completion
+set dictionary+=/usr/share/hunspell/en_GB.dic
 set thesaurus+=/usr/share/mythes/th_en_GB_v2.dat
-set visualbell
+
+" Formatting and wrapping
+set formatoptions+=1        " Insert line break after one letter word
+set textwidth=80            " This is changed below for certain filetypes
+
+" Buffers
+set hidden
+
+" Searching
+set ignorecase
+set showmatch
+set smartcase
+
+" Interface behaviour
+set mouse=a
+set scrolloff=15
+set splitbelow
+set splitright
+
+" Directory searching
+set path+=**                " Add recursive directory searching
+
+" Spelling
+set spelllang=en_gb,en_us
+
 
 " Tabs
-setlocal expandtab shiftwidth=4 tabstop=4
+setlocal expandtab          " Expand tabs to spaces
+setlocal shiftwidth=0       " Indent size always matches tab size ('tabstop')
+setlocal tabstop=4          " Display tabs as four spaces 
 
-" Filetype settings for written language
-autocmd FileType bib,tex,yaml setlocal expandtab shiftwidth=2 tabstop=2
-autocmd FileType gitcommit,markdown,tex setlocal spell
 
-" Filetype settings for programming languages
+" Filetype-specific autocommands
+" Programming languages
 autocmd FileType c,cpp setlocal expandtab& shiftwidth& tabstop&
 autocmd FileType python setlocal textwidth=79
+autocmd FileType yaml setlocal expandtab shiftwidth=0 tabstop=2
 
-" Document conversion
-" GitHub Flavored Markdown to HTML
-command Gitmd2html !pandoc --from=markdown_github-hard_line_breaks --to=html5
-  \ --output=%:r.html %
+" LaTeX
+autocmd FileType bib,tex
+    \ setlocal expandtab shiftwidth=0 tabstop=2 spell textwidth&
+
+" Other written language
+autocmd FileType gitcommit,markdown setlocal spell
+
+
+" Custom commands
+" Convert GitHub Flavored Markdown to HTML
+command Gitmd2html :write |
+    \ !pandoc --from=markdown_github-hard_line_breaks --to=html5
+    \ --output=%:r.html %
+    \ --toc --toc-depth 6
+    \ --css $HOME/git/markdown-css/github.css
+
 " LaTeX to PDF
 command Latex2pdf !latexmk -output-directory=aux -pdf main.tex

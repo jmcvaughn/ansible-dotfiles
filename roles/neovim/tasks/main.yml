@@ -7,3 +7,13 @@
   copy:
     src: init.vim
     dest: '{{ config_dir }}/nvim/'
+
+- name: Create ~/git directory (required for following git clone task)
+  file:
+    path: ~/git/
+    state: directory
+
+- name: Clone otsaloma's markdown-css repository (for GitHub Markdown previews)
+  git:
+    repo: https://github.com/otsaloma/markdown-css.git
+    dest: ~/git/markdown-css/
