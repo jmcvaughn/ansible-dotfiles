@@ -10,5 +10,5 @@
 
 - name: Create qutebrowser configuration file from template
   template:
-    src: qutebrowser.conf
-    dest: '{{ config_dir }}/qutebrowser/qutebrowser.conf'
+    src: config.py
+    dest: '{{ config_dir }}/qutebrowser/config.py'
