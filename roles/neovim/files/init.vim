@@ -81,10 +81,10 @@ autocmd FileType gitcommit,markdown setlocal spell
 " Custom commands
 " Convert GitHub Flavored Markdown to HTML
 command Gitmd2html :write |
-    \ !pandoc --from=markdown_github-hard_line_breaks --to=html5
-    \ --output=%:r.html %
+    \ !pandoc --from markdown_github-hard_line_breaks --to html5
+    \ --output %:r.html %
     \ --toc --toc-depth 6
-    \ --css $HOME/git/markdown-css/github.css
+    \ --self-contained --css $HOME/git/markdown-css/github.css
 
 " LaTeX to PDF
 command Latex2pdf !latexmk -output-directory=aux -pdf main.tex
