@@ -109,7 +109,7 @@ foreground     = ${colours.fg}
 padding        = 3
 module-margin  = 1
 font-0         = "SourceCodePro:weight=medium:size={{ polybar.font_size }};2"
-font-1         = "FontAwesome:size={{ polybar.font_size }};2"
+font-1         = "Font Awesome 5 Free:style=Solid:size={{ polybar.font_size }};2"
 modules-left   = i3
 modules-center = xwindow
 modules-right  = {{ polybar.modules_right }}
