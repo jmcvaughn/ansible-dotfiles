@@ -36,6 +36,7 @@ $ rm ~/.local/share/applications/telegramdesktop.desktop
 ## Syncthing
 - Add devices, compress all data
 - Add `~/bin/`, `~/documents/` and `.dotfiles_synced/` directories
+- Enable `Fs Watcher` for each directory: *Actions > Advanced > DIRECTORY > Fs Watcher Enabled*
 - Run `.dotfiles_synced/link.sh` as user
 
 ## qutebrowser
