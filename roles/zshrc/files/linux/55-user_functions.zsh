@@ -1,5 +1,5 @@
 # Open one or more specified files using xdg-open
-o() {
+open() {
     for i; do
         if [ "${i##*.}" = "jnlp" ]; then
             (javaws $i &) &> /dev/null
@@ -8,3 +8,4 @@ o() {
         fi
     done
 }
+

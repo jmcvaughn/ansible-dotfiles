@@ -37,3 +37,4 @@ setopt prompt_subst
 
 # ZLE
 unsetopt beep
+

@@ -14,3 +14,4 @@ preexec() {
     # Window title
     printf '\33]2;%s\007' "$(echo ${TTY:9}): $1 ($USER@$HOST:$PWD)"
 }
+

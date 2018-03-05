@@ -48,3 +48,4 @@ bindkey -M vicmd "^[[3~" delete-char                    # Delete
 
 # Completion
 bindkey -M main " " magic-space                 # History expansion on space
+

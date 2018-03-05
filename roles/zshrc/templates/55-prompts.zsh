@@ -12,3 +12,4 @@ zstyle ':vcs_info:*' unstagedstr '%F{red}●%f'       # dot: Unicode U+25CF
 PROMPT_COLOUR={{ zshrc.prompt_colour }}
 PROMPT=\
 '%B%F{$PROMPT_COLOUR}%~%f%b ${vcs_info_msg_0_}%B%(!.%F{red}(root) %#%f.%#)%b '
+
