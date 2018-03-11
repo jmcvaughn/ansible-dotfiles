@@ -7,7 +7,7 @@ polybar_local:
   modules_right: volume wifi date
 
 qutebrowser_local:
-  font_size: 9pt
+  font_size: 8pt
 
 zshrc_local:
   prompt_colour: blue

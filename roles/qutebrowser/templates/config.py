@@ -24,9 +24,10 @@ c.colors.downloads.bar.bg = '#282828'
 c.colors.downloads.error.bg = '#282828'
 c.colors.downloads.error.fg = '#fb4934'
 c.colors.downloads.start.bg = '#282828'
-c.colors.downloads.start.fg = '#83a598'
+c.colors.downloads.start.fg = '#fabd2f'
 c.colors.downloads.stop.bg = '#282828'
 c.colors.downloads.stop.fg = '#b8bb26'
+c.colors.downloads.system.fg = 'none'
 c.colors.hints.bg = '#fabd2f'
 c.colors.hints.fg = '#1d2021'
 c.colors.hints.match.fg = '#7c6f64'
@@ -66,17 +67,26 @@ c.colors.statusbar.url.hover.fg = '#a89984'
 c.colors.statusbar.url.success.http.fg = '#ebdbb2'
 c.colors.statusbar.url.success.https.fg = '#b8bb26'
 c.colors.statusbar.url.warn.fg = '#fb4934'
+c.colors.tabs.bar.bg = '#282828'
+c.colors.tabs.even.bg = '#282828'
+c.colors.tabs.even.fg = '#ebdbb2'
+c.colors.tabs.indicator.error = '#fb4934'
+c.colors.tabs.indicator.start = '#fabd2f'
+c.colors.tabs.indicator.stop = '#b8bb26'
+c.colors.tabs.indicator.system = 'none'
+c.colors.tabs.odd.bg = '#282828'
+c.colors.tabs.odd.fg = '#ebdbb2'
+c.colors.tabs.selected.even.bg = '#504945'
+c.colors.tabs.selected.even.fg = '#ebdbb2'
+c.colors.tabs.selected.odd.bg = '#504945'
+c.colors.tabs.selected.odd.fg = '#ebdbb2'
 
 c.content.headers.accept_language = 'en-GB,en'
 
 c.downloads.location.prompt = False                     # Use XDG_DOWNLOAD_DIR
 c.downloads.position = 'bottom'
 
-c.editor.command = [
-    '/usr/bin/termite',
-    '--exec',
-    '/usr/bin/nvim {}'
-]
+c.editor.command = ['kitty', 'nvim', '{}']
 
 c.fonts.completion.category = 'bold {{ qutebrowser.font_size }} monospace'
 c.fonts.completion.entry = '{{ qutebrowser.font_size }} monospace'
@@ -90,6 +100,7 @@ c.fonts.messages.warning = '{{ qutebrowser.font_size }} monospace'
 c.fonts.monospace = 'Source Code Pro'
 c.fonts.prompts = '{{ qutebrowser.font_size }} monospace'
 c.fonts.statusbar = '{{ qutebrowser.font_size }} monospace'
+c.fonts.tabs = '{{ qutebrowser.font_size }} monospace'
 
 c.hints.border = '2px solid #fabd2f'
 
@@ -99,13 +110,12 @@ c.scrolling.bar = True
 
 c.tabs.last_close = 'close'
 c.tabs.show = 'multiple'
-c.tabs.tabs_are_windows = True
 
 c.url.auto_search = 'dns'
 c.url.searchengines = {
     'DEFAULT': 'https://encrypted.google.com/search?gl=uk&q={}',
     'd': 'https://duckduckgo.com/?q=!{}'
 }
-c.url.start_pages = ['about:blank']
 
 c.window.title_format = '{id}: {perc}{title} ({scroll_pos})'
+

@@ -1,0 +1,9 @@
+- hosts: '{{ host }}'
+  become: True
+  become_user: '{{ user }}'
+  roles:
+    - { role: zshrc, tags: zshrc }
+    - { role: neovim, tags: neovim }
+    - { role: gitconfig, tags: gitconfig }
+    - { role: mpv, tags: mpv }
+    - { role: qutebrowser, tags: qutebrowser }
