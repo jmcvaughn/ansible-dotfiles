@@ -34,6 +34,24 @@
     src: 55-prompts.zsh
     dest: ~/.zshrc.d/
 
+- name: Check vte3 or vte3-ng installed
+  command: "pacman -Qqs '^vte3($|-ng$)'"
+  register: vte_installed
+  ignore_errors: True
+
+- name: Add VTE directory setting to zshrc
+  blockinfile:
+    path: ~/.zshrc
+    insertafter: '^# Ansible-managed$'
+    marker: '# {mark} Ansible-managed block: Add VTE directory setting'
+    block: |
+      # Sets VTE directory for new windows
+      if [ -z "$SSH_TTY" ] && [ -z "$SUDO_UID" ]; then
+          source /etc/profile.d/vte.sh
+          __vte_osc7
+      fi
+  when: vte_installed.rc == 0
+
 - name: Add custom entries to zshrc
   blockinfile:
     path: ~/.zshrc

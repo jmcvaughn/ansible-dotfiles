@@ -13,7 +13,7 @@
     - { role: polybar, tags: polybar }
     - { role: gtk2, tags: gtk2 }
     - { role: gtk3, tags: gtk3 }
-    - { role: termite, tags: termite }
+    - { role: kitty, tags: kitty }
     - { role: rofi, tags: rofi }
     - { role: mimeappslist, tags: mimeappslist }
     - { role: xdg_dirs, tags: xdg_dirs }

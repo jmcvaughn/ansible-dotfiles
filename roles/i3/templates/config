@@ -48,8 +48,10 @@ set $lorange #fe8019
 set $mod Mod1
 
 # Applications
-bindsym $mod+Return exec "termite"
+bindsym $mod+Return exec "kitty tmux"
+bindsym $mod+Shift+Return exec "kitty"
 bindsym $mod+d exec --no-startup-id "qutebrowser"
+bindsym $mod+Shift+d exec --no-startup-id "qutebrowser ':open -p'"
 {% if i3.browser == 'firefox' %}
 bindsym $mod+f exec --no-startup-id "firefox"
 bindsym $mod+Shift+f exec --no-startup-id "firefox --private-window"

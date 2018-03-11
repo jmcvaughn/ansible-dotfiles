@@ -1,0 +1,5 @@
+- name: Copy xinitrc configuration file
+  copy:
+    src: tmux.conf
+    dest: ~/.tmux.conf
+

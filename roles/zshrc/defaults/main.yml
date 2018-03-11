@@ -1,6 +1,5 @@
 zshrc:
   prompt_colour: 'white'
-  emulator: None
   # Optional but undefined by default. Usage example (the pipe and new line is
   # required):
   #custom: |
