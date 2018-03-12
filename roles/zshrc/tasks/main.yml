@@ -31,7 +31,7 @@
 
 - name: Create Zsh prompts configuration file from template
   template:
-    src: 55-prompts.zsh
+    src: 53-prompts.zsh
     dest: ~/.zshrc.d/
 
 - name: Add custom entries to zshrc

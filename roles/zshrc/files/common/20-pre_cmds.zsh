@@ -3,7 +3,7 @@
 # Run before displaying prompt
 precmd() {
     # Window title
-    printf '\33]2;%s\007' "$(echo ${TTY:9}): $USER@$HOST:$PWD"
+    print -nP '\033]2;${TTY:9}: %n@%m:%3~\007'
 
     # Version control system prompt
     vcs_info
@@ -12,6 +12,6 @@ precmd() {
 # Run before running command
 preexec() {
     # Window title
-    printf '\33]2;%s\007' "$(echo ${TTY:9}): $1 ($USER@$HOST:$PWD)"
+    print -nP '\033]2;(${TTY:9}): $1 (%n@%m:%3~)\007'
 }
 
