@@ -16,7 +16,7 @@ rofi.separator-style:   solid
 rofi.width:             700
 
 ! SSH
-rofi.ssh-command:       {terminal} -e "{ssh-client} {host}"
+rofi.ssh-command:       kitty {ssh-client} {host}
 rofi.parse-known-hosts: false
 
 ! History and Sorting
