@@ -12,6 +12,6 @@ precmd() {
 # Run before running command
 preexec() {
     # Window title
-    print -nP '\033]2;(${TTY:9}): $1 (%n@%m:%3~)\007'
+    print -nP '\033]2;${TTY:9}: $1 (%n@%m:%3~)\007'
 }
 
