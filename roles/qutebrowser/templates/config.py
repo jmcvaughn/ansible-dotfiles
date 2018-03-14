@@ -1,3 +1,4 @@
+# Custom variables
 # Colours: gruvbox dark - https://github.com/morhetz/gruvbox/
 # bg, dark to light
 bg0_h = '#1d2021'
@@ -36,16 +37,6 @@ l_white = '#ebdbb2'
 d_orange = '#d65d0e'
 l_orange = '#fe8019'
 
-# See the setting reference within qutebrowser - qute://help/settings.html
-c.completion.shrink = True
-
-c.confirm_quit = [
-    'multiple-tabs',
-    'downloads'
-]
-
-# Use bg and fg rather than the matching 16 colours where possible
-# Common colours
 common_bg = bg
 common_fg = fg
 completion_bg = common_bg
@@ -54,10 +45,21 @@ downloads_bg = common_bg
 messages_bg = common_bg
 statusbar_bg = common_bg
 statusbar_fg = common_fg
-statusbar_private_bg = '#25003e'                # Matches Firefox private mode
+statusbar_private_bg = '#25003e'                # Firefox private mode colour
 tabs_bg = common_bg
 tabs_fg = common_fg
 tabs_selected_bg = bg2
+
+
+# qutebrowser settings - qute://help/settings.html
+c.completion.shrink = True
+
+c.confirm_quit = [
+    'multiple-tabs',
+    'downloads',
+]
+
+# Use bg and fg rather than the matching 16 colours where possible
 c.colors.completion.category.bg = bg1
 c.colors.completion.category.border.bottom = c.colors.completion.category.bg
 c.colors.completion.category.border.top = c.colors.completion.category.bg
@@ -140,7 +142,7 @@ c.content.headers.accept_language = 'en-GB,en'
 c.downloads.location.prompt = False                     # Use XDG_DOWNLOAD_DIR
 c.downloads.position = 'bottom'
 
-c.editor.command = ['kitty', 'nvim', '{}']
+c.editor.command = ['kitty', 'nvim', '{}',]
 
 common_font = '{{ qutebrowser.font_size }} monospace'
 c.fonts.completion.category = 'bold ' + common_font
@@ -161,7 +163,18 @@ c.hints.border = '2px solid ' + l_yellow
 
 c.messages.timeout = 2500
 
+c.new_instance_open_target = 'window'
+
 c.scrolling.bar = True
+c.scrolling.smooth = True
+
+c.statusbar.padding = {
+    'bottom': 2,
+    'left': 2,
+    'right': 2,
+    'top': 2,
+}
+c.statusbar.widgets = ['keypress', 'url', 'history',]
 
 c.tabs.favicons.show = False
 c.tabs.indicator.width = 5
@@ -172,14 +185,14 @@ c.tabs.padding = {
     'right': 5,
     'top': 2,
 }
-c.tabs.title.format = '{index}: ({scroll_pos}) {title}'
+c.tabs.title.format = '{index}: ({scroll_pos}) {private}{perc}{title}'
 c.tabs.title.format_pinned = '{index}: ({scroll_pos})'
 
 c.url.auto_search = 'dns'
 c.url.searchengines = {
     'DEFAULT': 'https://encrypted.google.com/search?gl=uk&q={}',
-    'd': 'https://duckduckgo.com/?q=!{}'
+    'd': 'https://duckduckgo.com/?q=!{}',
 }
 
-c.window.title_format = '{id}: ({scroll_pos}) {perc}{title}'
+c.window.title_format = '{id}: ({scroll_pos}) {private}{perc}{title}'
 
