@@ -181,5 +181,5 @@ c.url.searchengines = {
     'd': 'https://duckduckgo.com/?q=!{}'
 }
 
-c.window.title_format = '{id}: {perc}{title}'
+c.window.title_format = '{id}: ({scroll_pos}) {perc}{title}'
 
