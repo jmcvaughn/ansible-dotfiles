@@ -1,3 +1,41 @@
+# Colours: gruvbox dark - https://github.com/morhetz/gruvbox/
+# bg, dark to light
+bg0_h = '#1d2021'
+bg = '#282828'
+bg0 = '#282828'
+bg0_s = '#32302f'
+bg1 = '#3c3836'
+bg2 = '#504945'
+bg3 = '#665c54'
+bg4 = '#7c6f64'
+# fg, dark to light
+fg4 = '#a89984'
+fg3 = '#bdae93'
+fg2 = '#d5c4a1'
+fg1 = '#ebdbb2'
+fg = '#ebdbb2'
+fg0 = '#fbf1c7'
+# Standard 16 colours, dark (d) and light (l)
+d_black = '#282828'
+d_red = '#cc241d'
+d_green = '#98971a'
+d_yellow = '#d79921'
+d_blue = '#458588'
+d_purple = '#b16286'
+d_aqua = '#689d6a'
+d_white = '#a89984'
+l_black = '#928374'
+l_red = '#fb4934'
+l_green = '#b8bb26'
+l_yellow = '#fabd2f'
+l_blue = '#83a598'
+l_purple = '#d3869b'
+l_aqua = '#8ec07c'
+l_white = '#ebdbb2'
+# Orange
+d_orange = '#d65d0e'
+l_orange = '#fe8019'
+
 # See the setting reference within qutebrowser - qute://help/settings.html
 c.completion.shrink = True
 
@@ -6,80 +44,96 @@ c.confirm_quit = [
     'downloads'
 ]
 
-c.colors.completion.category.bg = '#3c3836'
-c.colors.completion.category.border.bottom = '#3c3836'
-c.colors.completion.category.border.top = '#3c3836'
-c.colors.completion.category.fg = '#ebdbb2'
-c.colors.completion.even.bg = '#282828'
-c.colors.completion.fg = '#ebdbb2'
-c.colors.completion.item.selected.bg = '#504945'
-c.colors.completion.item.selected.border.bottom = '#504945'
-c.colors.completion.item.selected.border.top = '#504945'
-c.colors.completion.item.selected.fg = '#ebdbb2'
-c.colors.completion.match.fg = '#fe8019'
-c.colors.completion.odd.bg = '#282828'
-c.colors.completion.scrollbar.bg = '#282828'
-c.colors.completion.scrollbar.fg = '#3c3836'
-c.colors.downloads.bar.bg = '#282828'
-c.colors.downloads.error.bg = '#282828'
-c.colors.downloads.error.fg = '#fb4934'
-c.colors.downloads.start.bg = '#282828'
-c.colors.downloads.start.fg = '#fabd2f'
-c.colors.downloads.stop.bg = '#282828'
-c.colors.downloads.stop.fg = '#b8bb26'
+# Use bg and fg rather than the matching 16 colours where possible
+# Common colours
+common_bg = bg
+common_fg = fg
+completion_bg = common_bg
+completion_fg = common_fg
+downloads_bg = common_bg
+messages_bg = common_bg
+statusbar_bg = common_bg
+statusbar_fg = common_fg
+statusbar_private_bg = '#25003e'                # Matches Firefox private mode
+tabs_bg = common_bg
+tabs_fg = common_fg
+tabs_selected_bg = bg2
+c.colors.completion.category.bg = bg1
+c.colors.completion.category.border.bottom = c.colors.completion.category.bg
+c.colors.completion.category.border.top = c.colors.completion.category.bg
+c.colors.completion.category.fg = completion_fg
+c.colors.completion.even.bg = completion_bg
+c.colors.completion.fg = completion_fg
+c.colors.completion.item.selected.bg = bg2
+c.colors.completion.item.selected.border.bottom \
+    = c.colors.completion.item.selected.bg
+c.colors.completion.item.selected.border.top \
+    = c.colors.completion.item.selected.bg
+c.colors.completion.item.selected.fg = completion_fg
+c.colors.completion.match.fg = l_orange
+c.colors.completion.odd.bg = completion_bg
+c.colors.completion.scrollbar.bg = completion_bg
+c.colors.completion.scrollbar.fg = bg2
+c.colors.downloads.bar.bg = downloads_bg
+c.colors.downloads.error.bg = downloads_bg
+c.colors.downloads.error.fg = l_red
+c.colors.downloads.start.bg = downloads_bg
+c.colors.downloads.start.fg = l_yellow
+c.colors.downloads.stop.bg = downloads_bg
+c.colors.downloads.stop.fg = l_green
 c.colors.downloads.system.fg = 'none'
-c.colors.hints.bg = '#fabd2f'
-c.colors.hints.fg = '#1d2021'
-c.colors.hints.match.fg = '#7c6f64'
-c.colors.keyhint.bg = '#282828'
-c.colors.keyhint.fg = '#ebdbb2'
-c.colors.keyhint.suffix.fg = '#fe8019'
-c.colors.messages.error.bg = '#282828'
-c.colors.messages.error.border = '#282828'
-c.colors.messages.error.fg = '#fb4934'
-c.colors.messages.info.bg = '#282828'
-c.colors.messages.info.border = '#282828'
-c.colors.messages.info.fg = '#ebdbb2'
-c.colors.messages.warning.bg = '#282828'
-c.colors.messages.warning.border = '#282828'
-c.colors.messages.warning.fg = '#fb4934'
-c.colors.prompts.bg = '#282828'
-c.colors.prompts.fg = '#ebdbb2'
-c.colors.prompts.selected.bg = '#504945'
-c.colors.statusbar.caret.bg = '#282828'
-c.colors.statusbar.caret.fg = '#fabd2f'
-c.colors.statusbar.caret.selection.bg = '#282828'
-c.colors.statusbar.caret.selection.fg = '#fabd2f'
-c.colors.statusbar.command.bg = '#282828'
-c.colors.statusbar.command.fg = '#ebdbb2'
-c.colors.statusbar.command.private.bg = '#25003e'
-c.colors.statusbar.command.private.fg = '#ebdbb2'
-c.colors.statusbar.insert.bg = '#282828'
-c.colors.statusbar.insert.fg = '#fabd2f'
-c.colors.statusbar.normal.bg = '#282828'
-c.colors.statusbar.normal.fg = '#ebdbb2'
-c.colors.statusbar.private.bg = '#25003e'
-c.colors.statusbar.private.fg = '#ebdbb2'
-c.colors.statusbar.progress.bg = '#ebdbb2'
-c.colors.statusbar.url.error.fg = '#fb4934'
-c.colors.statusbar.url.fg = '#ebdbb2'
-c.colors.statusbar.url.hover.fg = '#a89984'
-c.colors.statusbar.url.success.http.fg = '#ebdbb2'
-c.colors.statusbar.url.success.https.fg = '#b8bb26'
-c.colors.statusbar.url.warn.fg = '#fb4934'
-c.colors.tabs.bar.bg = '#282828'
-c.colors.tabs.even.bg = '#282828'
-c.colors.tabs.even.fg = '#ebdbb2'
-c.colors.tabs.indicator.error = '#fb4934'
-c.colors.tabs.indicator.start = '#fabd2f'
-c.colors.tabs.indicator.stop = '#b8bb26'
+c.colors.hints.bg = l_yellow
+c.colors.hints.fg = bg0_h
+c.colors.hints.match.fg = bg4
+c.colors.keyhint.bg = common_bg
+c.colors.keyhint.fg = common_fg
+c.colors.keyhint.suffix.fg = l_orange
+c.colors.messages.error.bg = messages_bg
+c.colors.messages.error.border = c.colors.messages.error.bg
+c.colors.messages.error.fg = l_red
+c.colors.messages.info.bg = messages_bg
+c.colors.messages.info.border = c.colors.messages.info.bg
+c.colors.messages.info.fg = common_fg
+c.colors.messages.warning.bg = messages_bg
+c.colors.messages.warning.border = c.colors.messages.warning.bg
+c.colors.messages.warning.fg = l_orange
+c.colors.prompts.bg = common_bg
+c.colors.prompts.fg = common_fg
+c.colors.prompts.selected.bg = bg2
+c.colors.statusbar.caret.bg = statusbar_bg
+c.colors.statusbar.caret.fg = l_yellow
+c.colors.statusbar.caret.selection.bg = statusbar_bg
+c.colors.statusbar.caret.selection.fg = l_yellow
+c.colors.statusbar.command.bg = statusbar_bg
+c.colors.statusbar.command.fg = statusbar_fg
+c.colors.statusbar.command.private.bg = statusbar_private_bg
+c.colors.statusbar.command.private.fg = statusbar_fg
+c.colors.statusbar.insert.bg = statusbar_bg
+c.colors.statusbar.insert.fg = l_yellow
+c.colors.statusbar.normal.bg = statusbar_bg
+c.colors.statusbar.normal.fg = statusbar_fg
+c.colors.statusbar.private.bg = statusbar_private_bg
+c.colors.statusbar.private.fg = statusbar_fg
+c.colors.statusbar.progress.bg = statusbar_fg
+c.colors.statusbar.url.error.fg = l_red
+c.colors.statusbar.url.fg = statusbar_fg
+c.colors.statusbar.url.hover.fg = fg4
+c.colors.statusbar.url.success.http.fg = statusbar_fg
+c.colors.statusbar.url.success.https.fg = l_green
+c.colors.statusbar.url.warn.fg = l_orange
+c.colors.tabs.bar.bg = tabs_bg
+c.colors.tabs.even.bg = tabs_bg
+c.colors.tabs.even.fg = tabs_fg
+c.colors.tabs.indicator.error = l_red
+c.colors.tabs.indicator.start = l_yellow
+c.colors.tabs.indicator.stop = l_green
 c.colors.tabs.indicator.system = 'none'
-c.colors.tabs.odd.bg = '#282828'
-c.colors.tabs.odd.fg = '#ebdbb2'
-c.colors.tabs.selected.even.bg = '#504945'
-c.colors.tabs.selected.even.fg = '#ebdbb2'
-c.colors.tabs.selected.odd.bg = '#504945'
-c.colors.tabs.selected.odd.fg = '#ebdbb2'
+c.colors.tabs.odd.bg = tabs_bg
+c.colors.tabs.odd.fg = tabs_fg
+c.colors.tabs.selected.even.bg = tabs_selected_bg
+c.colors.tabs.selected.even.fg = tabs_fg
+c.colors.tabs.selected.odd.bg = tabs_selected_bg
+c.colors.tabs.selected.odd.fg = tabs_fg
 
 c.content.headers.accept_language = 'en-GB,en'
 
@@ -88,28 +142,38 @@ c.downloads.position = 'bottom'
 
 c.editor.command = ['kitty', 'nvim', '{}']
 
-c.fonts.completion.category = 'bold {{ qutebrowser.font_size }} monospace'
-c.fonts.completion.entry = '{{ qutebrowser.font_size }} monospace'
-c.fonts.debug_console = '{{ qutebrowser.font_size }} monospace'
-c.fonts.downloads = '{{ qutebrowser.font_size }} monospace'
+common_font = '{{ qutebrowser.font_size }} monospace'
+c.fonts.completion.category = 'bold ' + common_font
+c.fonts.completion.entry = common_font
+c.fonts.debug_console = common_font
+c.fonts.downloads = common_font
 c.fonts.hints = '{{ qutebrowser.hint_size }} monospace'
-c.fonts.keyhint = '{{ qutebrowser.font_size }} monospace'
-c.fonts.messages.error = '{{ qutebrowser.font_size }} monospace'
-c.fonts.messages.info = '{{ qutebrowser.font_size }} monospace'
-c.fonts.messages.warning = '{{ qutebrowser.font_size }} monospace'
+c.fonts.keyhint = common_font
+c.fonts.messages.error = common_font
+c.fonts.messages.info = common_font
+c.fonts.messages.warning = common_font
 c.fonts.monospace = 'Source Code Pro'
-c.fonts.prompts = '{{ qutebrowser.font_size }} monospace'
-c.fonts.statusbar = '{{ qutebrowser.font_size }} monospace'
-c.fonts.tabs = '{{ qutebrowser.font_size }} monospace'
+c.fonts.prompts = common_font
+c.fonts.statusbar = common_font
+c.fonts.tabs = common_font
 
-c.hints.border = '2px solid #fabd2f'
+c.hints.border = '2px solid ' + l_yellow
 
 c.messages.timeout = 2500
 
 c.scrolling.bar = True
 
+c.tabs.favicons.show = False
+c.tabs.indicator.width = 5
 c.tabs.last_close = 'close'
-c.tabs.show = 'multiple'
+c.tabs.padding = {
+    'bottom': 2,
+    'left': 5,
+    'right': 5,
+    'top': 2,
+}
+c.tabs.title.format = '{index}: ({scroll_pos}) {title}'
+c.tabs.title.format_pinned = '{index}: ({scroll_pos})'
 
 c.url.auto_search = 'dns'
 c.url.searchengines = {
@@ -117,5 +181,5 @@ c.url.searchengines = {
     'd': 'https://duckduckgo.com/?q=!{}'
 }
 
-c.window.title_format = '{id}: {perc}{title} ({scroll_pos})'
+c.window.title_format = '{id}: {perc}{title}'
 
