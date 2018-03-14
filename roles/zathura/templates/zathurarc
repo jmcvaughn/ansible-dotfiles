@@ -1,43 +1,53 @@
-set completion-bg           "#282828"
-set completion-fg           "#ebdbb2"
-set completion-group-bg     "#3c3836"
-set completion-group-fg     "#ebdbb2"
+# Colours: gruvbox dark - https://github.com/morhetz/gruvbox/
+
+# girara options
+set completion-bg "#282828"
+set completion-fg "#ebdbb2"
+set completion-group-bg "#3c3836"
+set completion-group-fg "#ebdbb2"
 set completion-highlight-bg "#282828"
-set completion-highlight-fg "#b8bb26"
+set completion-highlight-fg "#83a598"
 
-set default-fg              "#ebdbb2"
+set default-fg "#ebdbb2"
 
-set font                    "Source Code Pro Bold {{ zathura.font_size }}"
-set guioptions              cs
+set font "Source Code Pro {{ zathura.font_size }}"
+set guioptions cshv
 
-set inputbar-bg             "#282828"
-set inputbar-fg             "#ebdbb2"
+set inputbar-bg "#282828"
+set inputbar-fg "#ebdbb2"
 
-set notification-bg         "#282828"
-set notification-fg         "#ebdbb2"
-set notification-error-bg   "#fb4934"
-set notification-error-fg   "#282828"
+set notification-bg "#282828"
+set notification-fg "#ebdbb2"
+set notification-error-bg "#282828"
+set notification-error-fg "#fb4934"
 set notification-warning-bg "#282828"
-set notification-warning-fg "#fb4934"
+set notification-warning-fg "#fe8019"
 
-set statusbar-bg            "#7c6f64"
-set statusbar-fg            "#282828"
+set statusbar-bg "#504945"
+set statusbar-fg "#ebdbb2"
 
-set page-padding            "3"
+# zathura options
+set page-padding "3"
 
-set highlight-color         "#fabd2f"
-set highlight-active-color  "#fe8019"   
+set highlight-color "#fabd2f"
+set highlight-active-color "#fe8019"
 
-set recolor                 "true"
-set recolor-darkcolor       "#ebdbb2"
-set recolor-lightcolor      "#282828"
+set recolor true
+set recolor-darkcolor "#ebdbb2"
+set recolor-lightcolor "#282828"
 
-set scroll-page-aware       "true"
-set smooth-scroll           "true"
+set scroll-page-aware true
+set smooth-scroll true
 
-set selection-clipboard     "clipboard"
+set window-title-home-tilde true
+set window-title-page true
 
-set index-fg                "#ebdbb2"
-set index-bg                "#282828"
-set index-active-fg         "#b8bb26"
-set index-active-bg         "#282828"
+set statusbar-home-tilde true
+
+set selection-clipboard "clipboard"
+
+set index-fg "#ebdbb2"
+set index-bg "#282828"
+set index-active-fg "#b8bb26"
+set index-active-bg "#282828"
+
