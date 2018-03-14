@@ -51,7 +51,7 @@ set $mod Mod1
 bindsym $mod+Return exec "kitty tmux"
 bindsym $mod+Shift+Return exec "kitty"
 bindsym $mod+d exec --no-startup-id "qutebrowser"
-bindsym $mod+Shift+d exec --no-startup-id "qutebrowser ':open -p'"
+bindsym $mod+Shift+d exec --no-startup-id "qutebrowser --nowindow ':open -p'"
 {% if i3.browser == 'firefox' %}
 bindsym $mod+f exec --no-startup-id "firefox"
 bindsym $mod+Shift+f exec --no-startup-id "firefox --private-window"
