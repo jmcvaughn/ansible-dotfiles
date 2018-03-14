@@ -3,13 +3,12 @@ gtk2:
 
 gtk3:
   font_size: 10
-  terminal_padding: 15px
 
 kitty:
   font_size: 8.0
 
 rofi:
-  font_size: 10
+  font_size: 9
 
 syncthing:
   gui_address: 127.0.0.1:8384
@@ -19,7 +18,7 @@ xresources:
   cursor_size: 16
 
 zathura:
-  font_size: 10
+  font_size: 9
 
 zprofile:
   repeat_delay: 275

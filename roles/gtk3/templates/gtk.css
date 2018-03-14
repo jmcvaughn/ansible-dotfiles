@@ -1,3 +1,0 @@
-VteTerminal, vte-terminal {
-    padding: {{ gtk3.terminal_padding }};
-}
