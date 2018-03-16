@@ -1,5 +1,5 @@
 i3_local:
-  font_size: 10
+  font_size: 9
 
 polybar_local:
   wifi_interface: wlp3s0
@@ -7,7 +7,7 @@ polybar_local:
   modules_right: volume wifi battery date
 
 qutebrowser_local:
-  font_size: 10pt
+  font_size: 9pt
 
 zshrc_local:
   prompt_colour: green

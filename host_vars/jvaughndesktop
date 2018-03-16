@@ -1,5 +1,5 @@
 i3_local:
-  font_size: 9
+  font_size: 8
 
 polybar_local:
   wifi_interface: wlp9s0
