@@ -6,6 +6,8 @@ alias si="sudo -i"
 alias sudo="sudo "
 
 # File viewing/editing
+alias diff="diff ==color=auto"
+alias grep="grep --color=auto"
 alias les="less"
 alias o="open"
 
