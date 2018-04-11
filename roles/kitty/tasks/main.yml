@@ -5,5 +5,5 @@
 
 - name: Create kitty configuration file from template
   template:
-    src: config
+    src: kitty.conf
     dest: '{{ config_dir }}/kitty/kitty.conf'
