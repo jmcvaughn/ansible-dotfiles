@@ -44,16 +44,5 @@ qutebrowser_pc:
 
 qutebrowser: '{{ qutebrowser_pc | combine(qutebrowser_local) }}'
 
-# zshrc
-zshrc_pc:
-  custom: |
-    alias gitsvclone="git clone jvaughnserver:git/$1/ $HOME/git/$1/"
-    gitpullall() {
-        for i in $(ls --directory $HOME/git/*); do
-            git -C $i pull
-        done
-    }
-
-zshrc: '{{ zshrc_pc | combine(zshrc_local) }}'
-
 # vim: filetype=yaml
+
