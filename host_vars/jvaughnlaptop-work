@@ -1,9 +1,10 @@
-user: jmvaughn
+kitty:
+  font_size: 11
 
-qutebrowser_local:
-  font_size: 9pt
+qutebrowser:
+  font_size: 11pt
 
-zshrc_local:
+zshrc:
   prompt_colour: green
 
 # vim: filetype=yaml

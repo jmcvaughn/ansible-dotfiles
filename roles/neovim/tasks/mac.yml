@@ -1,10 +1,15 @@
-- name: Create Neovim configuration directory
+- name: Create Neovim configuration directories
   file:
-    path: ~/.config/nvim/
+    path: ~/.config/nvim/colors/
     state: directory
 
 - name: Copy Neovim configuration file
   copy:
     src: init.vim
     dest: ~/.config/nvim/
+
+- name: Download gruvbox colour scheme
+  get_url:
+    url: https://raw.githubusercontent.com/morhetz/gruvbox/master/colors/gruvbox.vim
+    dest: ~/.config/nvim/colors/
 

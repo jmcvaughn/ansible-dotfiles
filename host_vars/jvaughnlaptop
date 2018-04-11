@@ -9,7 +9,7 @@ polybar_local:
 qutebrowser_local:
   font_size: 9pt
 
-zshrc_local:
+zshrc:
   prompt_colour: green
 
 # vim: filetype=yaml

@@ -10,9 +10,3 @@
     - { role: mpv, tags: mpv }
     - { role: qutebrowser, tags: qutebrowser }
 
-  tasks:
-    - name: Set default shell to Zsh
-      user:
-        name: '{{ user }}'
-        shell: /usr/local/bin/zsh
-
