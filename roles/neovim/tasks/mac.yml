@@ -1,0 +1,10 @@
+- name: Create Neovim configuration directory
+  file:
+    path: ~/.config/nvim/
+    state: directory
+
+- name: Copy Neovim configuration file
+  copy:
+    src: init.vim
+    dest: ~/.config/nvim/
+

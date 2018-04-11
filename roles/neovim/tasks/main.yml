@@ -1,14 +1,12 @@
-- name: Create Neovim configuration directory
-  file:
-    path: '{{ config_dir }}/nvim/'
-    state: directory
+- name: Configure qutebrowser on Linux
+  include: linux.yml
+  when: ansible_distribution | lower | search('linux')
 
-- name: Copy Neovim configuration file
-  copy:
-    src: init.vim
-    dest: '{{ config_dir }}/nvim/'
+- name: Configure qutebrowser on Mac
+  include: mac.yml
+  when: ansible_distribution | lower | search('mac')
 
-- name: Create ~/git directory (required for following git clone task)
+- name: Create ~/git/ directory (required for following git clone task)
   file:
     path: ~/git/
     state: directory
@@ -17,3 +15,4 @@
   git:
     repo: https://github.com/otsaloma/markdown-css.git
     dest: ~/git/markdown-css/
+
