@@ -1,9 +1,8 @@
-- name: Create mpv configuration directory
-  file:
-    path: '{{ config_dir }}/mpv/'
-    state: directory
+- name: Configure mpv for Linux
+  include: linux.yml
+  when: ansible_distribution | lower | search('linux')
 
-- name: Copy mpv input.conf configuration file
-  copy:
-    src: input.conf
-    dest: '{{ config_dir }}/mpv/input.conf'
+- name: Configure mpv for Mac
+  include: mac.yml
+  when: ansible_distribution | lower | search('mac')
+

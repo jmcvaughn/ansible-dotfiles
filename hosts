@@ -3,3 +3,5 @@ jvaughnserver ansible_connection=local ansible_python_interpreter=/usr/bin/pytho
 [pc]
 jvaughndesktop ansible_connection=local ansible_python_interpreter=/usr/bin/python2
 jvaughnlaptop ansible_connection=local ansible_python_interpreter=/usr/bin/python2
+jvaughnlaptop-work ansible_connection=local
+

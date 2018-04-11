@@ -140,6 +140,9 @@ c.colors.tabs.selected.odd.bg = tabs_selected_bg
 c.colors.tabs.selected.odd.fg = tabs_fg
 
 c.content.headers.accept_language = 'en-GB,en'
+{% if 'work' in inventory_hostname_short %}
+c.content.proxy = 'http://proxy-chain.intel.com:912'
+{% endif %}
 
 c.downloads.location.prompt = False                     # Use XDG_DOWNLOAD_DIR
 c.downloads.position = 'bottom'

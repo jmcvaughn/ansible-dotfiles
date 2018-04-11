@@ -3,7 +3,16 @@
   become_user: '{{ user }}'
   roles:
     - { role: zshrc, tags: zshrc }
+    - { role: tmux, tags: tmux }
     - { role: neovim, tags: neovim }
     - { role: gitconfig, tags: gitconfig }
+    - { role: kitty, tags: kitty }
     - { role: mpv, tags: mpv }
     - { role: qutebrowser, tags: qutebrowser }
+
+  tasks:
+    - name: Set default shell to Zsh
+      user:
+        name: '{{ user }}'
+        shell: /usr/local/bin/zsh
+

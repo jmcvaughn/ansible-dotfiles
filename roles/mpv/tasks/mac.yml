@@ -1,0 +1,10 @@
+- name: Create mpv configuration directory
+  file:
+    path: '~/.config/mpv/'
+    state: directory
+
+- name: Copy mpv input.conf configuration file
+  copy:
+    src: input.conf
+    dest: '~/.config/mpv/input.conf'
+

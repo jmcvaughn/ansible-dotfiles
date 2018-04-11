@@ -1,0 +1,10 @@
+user: jmvaughn
+
+qutebrowser_local:
+  font_size: 9pt
+
+zshrc_local:
+  prompt_colour: green
+
+# vim: filetype=yaml
+

@@ -1,0 +1,10 @@
+- name: Create qutebrowser configuration directory
+  file:
+    path: ~/.qutebrowser/
+    state: directory
+
+- name: Create qutebrowser configuration file from template
+  template:
+    src: config.py
+    dest: ~/.qutebrowser/config.py
+

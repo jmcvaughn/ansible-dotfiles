@@ -1,17 +1,8 @@
-- name: Set configuration directory from XDG_CONFIG_HOME
-  set_fact: 
-    config_dir: '{{ ansible_env.XDG_CONFIG_HOME }}'
-  register: set_config_dir_xdg
-  ignore_errors: True
+- name: Set configuration directory for Linux
+  include: linux.yml
+  when: ansible_distribution | lower | search('linux')
 
-- name: Set configuration to default
-  set_fact:
-    config_dir: ~/.config/
-  when: set_config_dir_xdg | failed
+- name: Set configuration directory for Mac
+  include: mac.yml
+  when: ansible_distribution | lower | search('mac')
 
-- name: Create .config directory
-  become: True
-  become_user: '{{ user }}'
-  file:
-    path: '{{ config_dir }}'
-    state: directory

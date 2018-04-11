@@ -1,14 +1,8 @@
-- name: Create downloads directory
-  file:
-    path: '{{ qutebrowser.download_directory }}'
-    state: directory
+- name: Configure qutebrowser on Linux
+  include: linux.yml
+  when: ansible_distribution | lower | search('linux')
 
-- name: Create qutebrowser configuration directory
-  file:
-    path: '{{ config_dir }}/qutebrowser/'
-    state: directory
+- name: Configure qutebrowser on Mac
+  include: mac.yml
+  when: ansible_distribution | lower | search('mac')
 
-- name: Create qutebrowser configuration file from template
-  template:
-    src: config.py
-    dest: '{{ config_dir }}/qutebrowser/config.py'
