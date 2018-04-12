@@ -10,7 +10,7 @@ fi
 
 {% if 'work' in inventory_hostname_short %}
 # Intel proxy
-export https_proxy="https://proxy-chain.intel.com:912"
+export https_proxy="http://proxy-chain.intel.com:912"
 export http_proxy=$https_proxy
 {% endif %}
 
