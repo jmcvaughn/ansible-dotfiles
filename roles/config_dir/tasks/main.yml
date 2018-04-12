@@ -1,8 +1,8 @@
 - name: Set configuration directory for Linux
   include: linux.yml
-  when: ansible_distribution | lower | search('linux')
+  when: ansible_distribution | lower is search('linux')
 
 - name: Set configuration directory for Mac
   include: mac.yml
-  when: ansible_distribution | lower | search('mac')
+  when: ansible_distribution | lower is search('mac')
 

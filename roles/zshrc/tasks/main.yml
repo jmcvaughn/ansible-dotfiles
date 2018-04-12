@@ -13,7 +13,7 @@
   with_items:
     - common
     - linux
-  when: ansible_distribution | lower | search('linux')
+  when: ansible_distribution | lower is search('linux')
 
 - name: Copy Mac zshrc configuration
   copy:
@@ -22,7 +22,7 @@
   with_items:
     - common
     - mac
-  when: ansible_distribution | lower | search('mac')
+  when: ansible_distribution | lower is search('mac')
 
 - name: Create .zshrc from template
   template:
@@ -41,3 +41,4 @@
     marker: '# {mark} Ansible-managed block: Add custom entries'
     block: '{{ zshrc.custom }}'
   when: zshrc.custom is defined
+

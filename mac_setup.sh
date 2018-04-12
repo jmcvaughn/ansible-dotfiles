@@ -23,10 +23,6 @@ brew install --with-default-names \
   grep \
   gnu-sed \
   gnu-tar \
-# gnu-time \
-# gnu-which \
-#brew install diffutils
-#brew install gzip
 
 # Install shell utilities
 brew install \
@@ -36,6 +32,13 @@ brew install \
   source-highlight \
   tree \
   tmux \
+
+# Add Homebrew zsh to /etc/shells
+sudo cp /etc/shells{,.bak}
+echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
+
+# Change user default shell to Homebrew zsh
+chsh -s /usr/local/bin/zsh
 
 # Install CLI applications that don't have dependencies
 brew install \
@@ -76,17 +79,11 @@ brew cask install \
 # https://github.com/jeffreywildman/homebrew-virt-manager/issues/76
 # https://github.com/jeffreywildman/homebrew-virt-manager/issues/81
 brew tap jeffreywildman/homebrew-virt-manager \
-  &&  brew cask install xquartz virt-manager virt-viewer
+  && brew cask install xquartz virt-manager virt-viewer
 
 # Install sshfs
 # osxfuse is a dependency
 brew cask install osxfuse && brew install sshfs
-
-# Create git/ directory
-mkdir $HOME/git/
-
-# Clone ansible-dotfiles from GitHub
-git clone git@github.com:v0rn/ansible-dotfiles.git $HOME/git/ansible-dotfiles/
 
 # Disable DS_Store file creation on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores true

@@ -1,4 +1,10 @@
-- name: Create zprofile from template
+- name: Create zprofile from template on Linux
   template:
     src: zprofile
     dest: ~/.zprofile
+  when: ansible_distribution | lower is search('linux')
+
+- name: Copy system-wide zprofile on Mac
+  command: cp /etc/zprofile ~/.zprofile
+  when: ansible_distribution | lower is search('mac')
+

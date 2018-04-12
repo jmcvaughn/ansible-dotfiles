@@ -1,10 +1,10 @@
 - name: Configure qutebrowser on Linux
   include: linux.yml
-  when: ansible_distribution | lower | search('linux')
+  when: ansible_distribution | lower is search('linux')
 
 - name: Configure qutebrowser on Mac
   include: mac.yml
-  when: ansible_distribution | lower | search('mac')
+  when: ansible_distribution | lower is search('mac')
 
 - name: Create ~/git/ directory (required for following git clone task)
   file:

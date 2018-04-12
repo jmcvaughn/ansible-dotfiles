@@ -1,1 +1,9 @@
-- include: base.yml
+- hosts: '{{ host }}'
+  become: True
+  become_user: '{{ user }}'
+  roles:
+    - { role: zshrc, tags: zshrc }
+    - { role: tmux, tags: tmux }
+    - { role: neovim, tags: neovim }
+    - { role: gitconfig, tags: gitconfig }
+    - { role: inputrc, tags: inputrc }

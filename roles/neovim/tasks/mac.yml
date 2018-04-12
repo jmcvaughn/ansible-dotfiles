@@ -9,7 +9,10 @@
     dest: ~/.config/nvim/
 
 - name: Download gruvbox colour scheme
-  get_url:
-    url: https://raw.githubusercontent.com/morhetz/gruvbox/master/colors/gruvbox.vim
-    dest: ~/.config/nvim/colors/
+  command: >
+    curl
+    https://raw.githubusercontent.com/morhetz/gruvbox/master/colors/gruvbox.vim
+    -o ~/.config/nvim/colors/gruvbox.vim
+  args:
+    warn: False
 

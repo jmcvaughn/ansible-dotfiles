@@ -33,5 +33,10 @@ Tags are defined to match role names in the playbooks. It is therefore possible
 to limit the executed roles by appending `-t TAG`, where `TAG` refers to a role
 or a comma-delimited list of roles to run.
 
+## Node naming in Ansible inventory
+The string 'work', contained anywhere within a node name in Ansible's inventory,
+is considered a special keyword to apply certain configurations for my work
+machines (typically proxies, e.g. in the `qutebrowser` and `zshrc` roles).
+
 ## Screenshot
 ![screenshot\_desktop](screenshot_desktop.png?raw=true)
