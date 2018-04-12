@@ -3,10 +3,8 @@
     path: '{{ config_dir }}/gtk-3.0/'
     state: directory
 
-- name: Create GTK+ 3 configuration files from templates
+- name: Create GTK+ 3 configuration file from templates
   template:
-    src: '{{ item }}'
-    dest: '{{ config_dir }}/gtk-3.0/{{ item }}'
-  with_items: 
-    - gtk.css
-    - settings.ini
+    src: settings.ini
+    dest: '{{ config_dir }}/gtk-3.0/settings.ini'
+
