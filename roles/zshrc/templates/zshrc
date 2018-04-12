@@ -1,3 +1,8 @@
+{% if ansible_distribution == 'MacOSX' %}
+# Source global zprofile to set initial PATH
+source /etc/zprofile
+{% endif %}
+
 # Source files in $HOME/.zshrc.d/
 zshrc_d="$HOME/.zshrc.d/"
 if [ -d $zshrc_d ]; then
