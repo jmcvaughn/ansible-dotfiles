@@ -1,4 +1,4 @@
 qutebrowser:
-  download_directory: '~/downloads/'
   font_size: 8pt
   hint_size: 13px
+

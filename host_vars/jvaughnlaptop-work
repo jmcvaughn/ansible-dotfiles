@@ -5,6 +5,7 @@ kitty:
 
 qutebrowser:
   font_size: 11pt
+  hint_size: 13px
 
 zshrc:
   prompt_colour: green

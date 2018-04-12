@@ -38,8 +38,6 @@ polybar: '{{ polybar_pc | combine(polybar_local) }}'
 
 # qutebrowser
 qutebrowser_pc:
-  download_directory: ~/downloads/
-  font: Source Code Pro
   hint_size: 13px
 
 qutebrowser: '{{ qutebrowser_pc | combine(qutebrowser_local) }}'

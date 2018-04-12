@@ -78,8 +78,9 @@ brew cask install \
 # Potential issues:
 # https://github.com/jeffreywildman/homebrew-virt-manager/issues/76
 # https://github.com/jeffreywildman/homebrew-virt-manager/issues/81
-brew tap jeffreywildman/homebrew-virt-manager \
-  && brew cask install xquartz virt-manager virt-viewer
+brew cask install xquartz \
+  && brew tap jeffreywildman/homebrew-virt-manager \
+  && brew install virt-manager virt-viewer
 
 # Install sshfs
 # osxfuse is a dependency
