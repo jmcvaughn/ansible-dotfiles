@@ -10,6 +10,5 @@ export PATH="$PATH:$HOME/bin"
 
 # Pagers
 export LESS="-FiRX"
-export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
 export MANPAGER="less --line-numbers"
 
