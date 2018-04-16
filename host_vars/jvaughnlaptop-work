@@ -1,5 +1,15 @@
 username: jmvaughn
 
+gitconfig:
+  - { name: user.name, value: James Vaughn }
+  - { name: user.email, value: v0rngit@gmail.com }
+  - { name: merge.tool, value: vimdiff }
+  - { name: mergetool.vimdiff.path, value: /usr/local/bin/nvim }
+  - { name: mergetool.prompt, value: false }
+  - { name: alias.df, value: diff }
+  - { name: alias.dt, value: difftool }
+  - { name: alias.stat, value: status }
+
 kitty:
   font_size: 11
 
