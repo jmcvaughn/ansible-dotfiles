@@ -14,7 +14,7 @@ kitty:
   font_size: 11
 
 qutebrowser:
-  font_size: 11pt
+  font_size: 12pt
   hint_size: 13px
 
 zshrc:
