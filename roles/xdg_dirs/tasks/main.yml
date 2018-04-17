@@ -1,4 +1,13 @@
-- name: Copy XDG user directories configuration file
-  copy:
-    src: user-dirs.dirs
-    dest: '{{ config_dir }}/user-dirs.dirs'
+- name: Create XDG user directories configuration file
+  lineinfile:
+    line: '{{ item.variable }}="{{ item.directory }}"'
+    path: '{{ config_dir }}/user-dirs.dirs'
+    create: True
+  with_items: '{{ xdg_dirs }}'
+
+- name: Create configuration directory
+  file:
+    path: '{{ item.directory }}'
+    state: directory
+  with_items: '{{ xdg_dirs }}'
+

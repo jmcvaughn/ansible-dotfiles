@@ -1,0 +1,10 @@
+xdg_dirs:
+  - { variable: 'XDG_DESKTOP_DIR', directory: '$HOME/' }
+  - { variable: 'XDG_DOCUMENTS_DIR', directory: '$HOME/documents' }
+  - { variable: 'XDG_DOWNLOAD_DIR', directory: '$HOME/downloads' }
+#  - { variable: 'XDG_MUSIC_DIR', directory: '$HOME/Music' }
+#  - { variable: 'XDG_PICTURES_DIR', directory: '$HOME/Pictures' }
+#  - { variable: 'XDG_PUBLICSHARE_DIR', directory: '$HOME/Public' }
+#  - { variable: 'XDG_TEMPLATES_DIR', directory: '$HOME/Templates' }
+#  - { variable: 'XDG_VIDEOS_DIR', directory: '$HOME/Videos' }
+
