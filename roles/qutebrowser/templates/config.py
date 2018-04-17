@@ -179,7 +179,7 @@ c.fonts.tabs = common_font
 
 c.hints.border = '2px solid ' + l_yellow
 
-c.messages.timeout = 0                          # Click to dismiss
+c.messages.timeout = 7000
 
 c.new_instance_open_target = 'window'
 
