@@ -50,8 +50,21 @@ tabs_bg = common_bg
 tabs_fg = common_fg
 tabs_selected_bg = bg2
 
+common_font = '{{ qutebrowser.font_size }} monospace'
 
-# qutebrowser settings - qute://help/settings.html
+
+# Key bindings
+# https://github.com/qutebrowser/qutebrowser/blob/master/doc/help/configuring.asciidoc
+# Unbind defaults
+config.unbind('<Ctrl-n>', mode='command')
+config.unbind('<Ctrl-p>', mode='command')
+
+# Command history bindings 
+config.bind('<Down>', 'command-history-next', mode='command')
+config.bind('<Up>', 'command-history-prev', mode='command')
+
+
+# Settings - qute://help/settings.html
 c.completion.shrink = True
 
 c.confirm_quit = [
@@ -144,12 +157,12 @@ c.content.headers.accept_language = 'en-GB,en'
 c.content.proxy = 'http://proxy-chain.intel.com:912'
 {% endif %}
 
-c.downloads.location.prompt = False                     # Use XDG_DOWNLOAD_DIR
+# Use XDG_DOWNLOAD_DIR (Linux) or ~/Downloads (Mac)
+c.downloads.location.prompt = False
 c.downloads.position = 'bottom'
 
 c.editor.command = ['kitty', 'nvim', '{}',]
 
-common_font = '{{ qutebrowser.font_size }} monospace'
 c.fonts.completion.category = 'bold ' + common_font
 c.fonts.completion.entry = common_font
 c.fonts.debug_console = common_font
@@ -166,7 +179,7 @@ c.fonts.tabs = common_font
 
 c.hints.border = '2px solid ' + l_yellow
 
-c.messages.timeout = 2500
+c.messages.timeout = 0                          # Click to dismiss
 
 c.new_instance_open_target = 'window'
 
