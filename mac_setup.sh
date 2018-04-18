@@ -68,10 +68,14 @@ brew cask install \
   flash-npapi \
   gotomeeting \
   insomniaX \
-  kitty \
   mpv \
   slack \
   switchresx \
+
+# Install kitty
+# ImageMagick required for viewing images using 'kitty icat'
+brew install imagemagick \
+  && brew cask install kitty
 
 # Install virt-manager and virt-viewer
 # xquartz is a dependency for both
