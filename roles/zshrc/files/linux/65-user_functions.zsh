@@ -9,3 +9,9 @@ open() {
     done
 }
 
+# Update
+ud() {
+    pacaur -Syu "$@" && sudo pacman -Rsn --noconfirm $(pacman -Qdtq) \
+      2> /dev/null
+}
+
