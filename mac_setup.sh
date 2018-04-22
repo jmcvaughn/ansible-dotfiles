@@ -33,9 +33,12 @@ brew install \
   tree \
   tmux \
 
-# Add Homebrew zsh to /etc/shells
-sudo cp /etc/shells{,.bak}
-echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
+# Add Homebrew zsh path to /etc/shells
+/usr/local/bin/grep -E '^/usr/local/bin/zsh$' /etc/shells &> /dev/null
+rc="$?"
+if [ "$rc" -ne 0 ]; then
+    echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
+fi
 
 # Change user default shell to Homebrew zsh
 chsh -s /usr/local/bin/zsh
