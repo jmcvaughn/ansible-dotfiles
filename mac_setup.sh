@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Set binary paths
+$brew_path="/usr/local/bin/brew"
+
 # Set up proxies
 if [ "$1" == "intel" ]; then
 	export https_proxy="http://proxy-chain.intel.com:912"
@@ -16,16 +19,16 @@ fi
 export HOMEBREW_NO_ANALYTICS=1
 
 # Install GNU utilities
-brew install gmp
-brew install coreutils --with-gmp
-brew install --with-default-names \
+"$brew_path" install gmp
+"$brew_path" install coreutils --with-gmp
+"$brew_path" install --with-default-names \
   findutils \
   grep \
   gnu-sed \
   gnu-tar \
 
 # Install shell utilities
-brew install \
+"$brew_path" install \
   zsh \
   zsh-completions \
   zsh-syntax-highlighting \
@@ -37,14 +40,15 @@ brew install \
 /usr/local/bin/grep -E '^/usr/local/bin/zsh$' /etc/shells &> /dev/null
 rc="$?"
 if [ "$rc" -ne 0 ]; then
-    echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
+    echo "/usr/local/bin/zsh" \
+      | sudo /usr/local/opt/coreutils/libexec/gnubin/tee -a /etc/shells
 fi
 
 # Change user default shell to Homebrew zsh
-chsh -s /usr/local/bin/zsh
+/usr/bin/chsh -s /usr/local/bin/zsh
 
 # Install CLI applications that don't have dependencies
-brew install \
+"$brew_path" install \
   ansible \
   aria2 \
   cask \
@@ -56,16 +60,16 @@ brew install \
   wget \
 
 # Install rmtree
-brew tap beeftornado/rmtree
+"$brew_path" tap beeftornado/rmtree
 
 # Install Homebrew-Cask
-brew tap caskroom/cask
+"$brew_path" tap caskroom/cask
 
 # Install Source Code Pro
-brew tap caskroom/fonts && brew cask install font-source-code-pro
+"$brew_path" tap caskroom/fonts && "$brew_path" cask install font-source-code-pro
 
 # Install GUI applications
-brew cask install \
+"$brew_path" cask install \
   displaycal \
   firefox \
   flash-npapi \
@@ -77,21 +81,21 @@ brew cask install \
 
 # Install kitty
 # ImageMagick required for viewing images using 'kitty icat'
-brew install imagemagick \
-  && brew cask install kitty
+"$brew_path" install imagemagick \
+  && "$brew_path" cask install kitty
 
 # Install virt-manager and virt-viewer
 # xquartz is a dependency for both
 # Potential issues:
 # https://github.com/jeffreywildman/homebrew-virt-manager/issues/76
 # https://github.com/jeffreywildman/homebrew-virt-manager/issues/81
-brew cask install xquartz \
-  && brew tap jeffreywildman/homebrew-virt-manager \
-  && brew install virt-manager virt-viewer
+"$brew_path" cask install xquartz \
+  && "$brew_path" tap jeffreywildman/homebrew-virt-manager \
+  && "$brew_path" install virt-manager virt-viewer
 
 # Install sshfs
 # osxfuse is a dependency
-brew cask install osxfuse && brew install sshfs
+"$brew_path" cask install osxfuse && "$brew_path" install sshfs
 
 # Disable DS_Store file creation on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores true
