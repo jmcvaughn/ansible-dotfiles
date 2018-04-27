@@ -4,6 +4,7 @@ alias .="source"
 alias s="sudo "
 alias si="sudo -i"
 alias sudo="sudo "
+alias vie="sudo -e"
 
 # File viewing/editing
 alias diff="diff --color=auto"
