@@ -2,9 +2,9 @@ alias .="source"
 
 # sudo
 alias s="sudo "
+alias se="sudo -e"
 alias si="sudo -i"
 alias sudo="sudo "
-alias vie="sudo -e"
 
 # File viewing/editing
 alias diff="diff --color=auto"
