@@ -8,7 +8,17 @@ export CDPATH="$HOME"
 export EDITOR="nvim"
 export PATH="$PATH:$HOME/bin"
 
+# less options
+local less_opts=(
+    "--quit-if-one-screen"
+    "--ignore-case"
+    "--LINE-NUMBERS"
+    "--RAW-CONTROL-CHARS"
+    "--HILITE-UNREAD"
+    "--no-init"
+)
+export LESS="$(eval echo $less_opts)"
+
 # Pagers
-export LESS="-FiRX"
 export MANPAGER="less --line-numbers"
 
