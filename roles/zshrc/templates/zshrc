@@ -3,11 +3,25 @@
 source /etc/zprofile
 {% endif %}
 
-# Source files in $HOME/.zshrc.d/
 zshrc_d="$HOME/.zshrc.d/"
-if [ -d $zshrc_d ]; then
-    for file in $zshrc_d/*.zsh; do
-        source $file;
+
+# Source files in $HOME/.zshrc.d/
+if [ -d "$zshrc_d" ]; then
+    for file in "$zshrc_d"/*.zsh; do
+        source "$file"
+    done
+fi
+
+# Add functions directory to fpath
+fpath=(
+    "$zshrc_d/functions/"
+    $fpath
+)
+
+# Autoload user functions
+if [ -d "$zshrc_d/functions/" ]; then
+    for function in "$zshrc_d/functions"/*; do
+        autoload -Uz "${function##*/}"
     done
 fi
 
@@ -16,7 +30,7 @@ fi
 {% if 'work' in inventory_hostname_short %}
 # Intel proxy
 export https_proxy="http://proxy-chain.intel.com:912"
-export http_proxy=$https_proxy
+export http_proxy="$https_proxy"
 {% endif %}
 
 # zsh-syntax-highlighting must be at end of zshrc
