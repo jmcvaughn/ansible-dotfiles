@@ -71,7 +71,6 @@ fi
 # Install GUI applications
 "$brew_path" cask install \
   displaycal \
-  drawio \
   firefox \
   flash-npapi \
   gotomeeting \
