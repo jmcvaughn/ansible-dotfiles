@@ -21,17 +21,11 @@ Duplex:         DuplexNoTumble
 Deselect:
 - `Show senders name`
 - `Play sound`
-- `Update automatically`
 
 Set notifications to appear top right, download path to `~/downloads/telegram/`.
 
 Set ttohin's [gruvbox
 theme](https://github.com/ttohin/tdesktop-gruvbox-dark-medium/).
-
-Remove launcher:
-```
-$ rm ~/.local/share/applications/telegramdesktop.desktop
-```
 
 ## Syncthing
 - Add devices, compress all data
