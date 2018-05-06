@@ -10,4 +10,5 @@ gitconfig:
   - { name: alias.dt, value: difftool }
   - { name: alias.stat, value: status }
 
-# vim: filetype=yaml
+# vim: set filetype=yaml:
+

@@ -20,5 +20,5 @@ qutebrowser:
 zshrc:
   prompt_colour: green
 
-# vim: filetype=yaml
+# vim: set filetype=yaml:
 

@@ -1,5 +1,5 @@
 zshrc:
   prompt_colour: yellow
 
-# vim: filetype=yaml
+# vim: set filetype=yaml:
 

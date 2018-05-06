@@ -42,5 +42,5 @@ qutebrowser_pc:
 
 qutebrowser: '{{ qutebrowser_pc | combine(qutebrowser_local) }}'
 
-# vim: filetype=yaml
+# vim: set filetype=yaml:
 
