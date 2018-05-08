@@ -37,3 +37,6 @@ alias lla="ls -l --all --color=auto --human-readable"
 alias llA="ls -l --almost-all --color=auto --human-readable"
 alias ls="ls --color=auto"
 
+# tree
+alias tre="tree -C"
+
