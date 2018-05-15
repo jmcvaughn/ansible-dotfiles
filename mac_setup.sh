@@ -21,6 +21,7 @@ export HOMEBREW_NO_ANALYTICS=1
 # Install GNU utilities
 "$brew_path" install gmp
 "$brew_path" install coreutils --with-gmp
+"$brew_path" install gnupg --with-gpg-zip --with-readline
 "$brew_path" install --with-default-names \
   findutils \
   grep \
