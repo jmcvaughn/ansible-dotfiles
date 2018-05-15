@@ -37,6 +37,9 @@ export HOMEBREW_NO_ANALYTICS=1
   tree \
   tmux \
 
+# Install Homebrew OpenSSH
+"$brew_path" install openssh --with-ldns
+
 # Add Homebrew zsh path to /etc/shells
 /usr/local/bin/grep -E '^/usr/local/bin/zsh$' /etc/shells &> /dev/null
 rc="$?"
@@ -48,7 +51,7 @@ fi
 # Change user default shell to Homebrew zsh
 /usr/bin/chsh -s /usr/local/bin/zsh
 
-# Install CLI applications that don't have dependencies
+# Install CLI applications that don't have Cask dependencies
 "$brew_path" install \
   ansible \
   aria2 \

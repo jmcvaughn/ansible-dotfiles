@@ -1,7 +1,7 @@
 # ansible-dotfiles
 ansible-dotfiles is a collection of Ansible playbooks and roles to provision my
 user configuration (dotfiles) to my server, desktop and MacBookAir6,2 (2013,
-Haswell).
+Haswell). These machines run either macOS or Arch Linux.
 
 It is presumed that ansible-dotfiles will be run on a system that has been
 provisioned using [ansible-arch](https://github.com/v0rn/ansible-arch); much of
@@ -37,6 +37,11 @@ or a comma-delimited list of roles to run.
 The string 'work', contained anywhere within a node name in Ansible's inventory,
 is considered a special keyword to apply certain configurations for my work
 machines (typically proxies, e.g. in the `qutebrowser` and `zshrc` roles).
+
+## Mac setup script
+Packages installed via Homebrew are generally installed/compiled with
+similar/same options as the Arch Linux versions, maintaining consistency across
+all of my systems.
 
 ## Screenshot
 ![screenshot\_desktop](screenshot_desktop.png?raw=true)
