@@ -2,6 +2,7 @@
 
 # Set binary paths
 $brew_path="/usr/local/bin/brew"
+$grep_path="/usr/local/bin/grep"
 
 # Set up proxies
 if [ "$1" == "intel" ]; then
@@ -41,9 +42,7 @@ export HOMEBREW_NO_ANALYTICS=1
 "$brew_path" install openssh --with-ldns
 
 # Add Homebrew zsh path to /etc/shells
-/usr/local/bin/grep -E '^/usr/local/bin/zsh$' /etc/shells &> /dev/null
-rc="$?"
-if [ "$rc" -ne 0 ]; then
+if ! "$grep_path" -E '^/usr/local/bin/zsh$' /etc/shells &> /dev/null; then
     echo "/usr/local/bin/zsh" \
       | sudo /usr/local/opt/coreutils/libexec/gnubin/tee -a /etc/shells
 fi
