@@ -5,7 +5,7 @@ if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
 fi
 
 # Start gpg-agent as a daemon if not already running
-pgrep -U $UID gpg-agent
+pgrep -qxU $UID gpg-agent
 if [ "$?" -ne 0 ]; then
     gpg-agent --daemon
 fi
