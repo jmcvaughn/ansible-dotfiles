@@ -29,6 +29,9 @@ export HOMEBREW_NO_ANALYTICS=1
   gnu-sed \
   gnu-tar \
 
+# Install pinentry-mac (for GnuPG)
+"$brew_path" install pinentry-mac
+
 # Install shell utilities
 "$brew_path" install \
   zsh \
