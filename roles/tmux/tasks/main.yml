@@ -1,18 +1,5 @@
-- name: Create or clear tmux configuration directory
-  file:
-    path: ~/.tmux.d/
-    state: '{{ item }}'
-  with_items:
-    - absent
-    - directory
-
 - name: Copy .tmux.conf configuration file
   copy:
     src: tmux.conf
     dest: ~/.tmux.conf
-
-- name: Copy .tmux.d/ configuration files
-  copy:
-    src: tmux.d/
-    dest: ~/.tmux.d/
 
