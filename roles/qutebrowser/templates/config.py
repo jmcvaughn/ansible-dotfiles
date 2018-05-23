@@ -193,7 +193,7 @@ c.statusbar.padding = {
 }
 c.statusbar.widgets = ['keypress', 'url', 'history',]
 
-c.tabs.favicons.show = False
+c.tabs.favicons.show = 'pinned'
 c.tabs.indicator.width = 5
 c.tabs.last_close = 'close'
 c.tabs.padding = {
