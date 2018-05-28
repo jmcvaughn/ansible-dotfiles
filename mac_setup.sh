@@ -72,7 +72,8 @@ fi
 "$brew_path" tap caskroom/cask
 
 # Install Source Code Pro
-"$brew_path" tap caskroom/fonts && "$brew_path" cask install font-source-code-pro
+"$brew_path" tap caskroom/fonts \
+  && "$brew_path" cask install font-source-code-pro
 
 # Install GUI applications
 "$brew_path" cask install \
@@ -86,21 +87,34 @@ fi
   switchresx \
 
 # Install kitty
-# ImageMagick required for viewing images using 'kitty icat'
+#   ImageMagick required for viewing images using 'kitty icat'
 "$brew_path" install imagemagick \
   && "$brew_path" cask install kitty
 
+# Fix permissions on ~/Library/LaunchAgents/
+sudo chown -R $UID:$GID $HOME/Library/LaunchAgents/
+
+# Install chunkwm and skhd
+#   After installation, follow these steps:
+#     https://github.com/crisidev/homebrew-chunkwm
+#     https://github.com/koekeishiya/skhd
+#   Temporarily install cev to grab keycodes for configuration:
+#     brew install koekeishiya/formulae/cev
+"$brew_path" tap crisidev/homebrew-chunkwm \
+  && "$brew_path" install --HEAD chunkwm
+"$brew_path" install koekeishiya/formulae/skhd
+
 # Install virt-manager and virt-viewer
-# xquartz is a dependency for both
-# Potential issues:
-# https://github.com/jeffreywildman/homebrew-virt-manager/issues/76
-# https://github.com/jeffreywildman/homebrew-virt-manager/issues/81
+#   xquartz is a dependency for both
+#     Potential issues:
+#       https://github.com/jeffreywildman/homebrew-virt-manager/issues/76
+#       https://github.com/jeffreywildman/homebrew-virt-manager/issues/81
 "$brew_path" cask install xquartz \
   && "$brew_path" tap jeffreywildman/homebrew-virt-manager \
   && "$brew_path" install virt-manager virt-viewer
 
 # Install sshfs
-# osxfuse is a dependency
+#   osxfuse is a dependency
 "$brew_path" cask install osxfuse && "$brew_path" install sshfs
 
 # Disable DS_Store file creation on network volumes
