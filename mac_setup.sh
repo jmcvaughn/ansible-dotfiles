@@ -85,6 +85,7 @@ fi
   mpv \
   slack \
   switchresx \
+  whichspace \
 
 # Install kitty
 #   ImageMagick required for viewing images using 'kitty icat'
