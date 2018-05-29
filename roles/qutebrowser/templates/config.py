@@ -186,10 +186,10 @@ c.new_instance_open_target = 'window'
 c.scrolling.bar = True
 
 c.statusbar.padding = {
-    'bottom': 2,
-    'left': 2,
-    'right': 2,
-    'top': 2,
+    'bottom': 8,
+    'left': 5,
+    'right': 5,
+    'top': 0,
 }
 c.statusbar.widgets = ['keypress', 'url', 'history',]
 
