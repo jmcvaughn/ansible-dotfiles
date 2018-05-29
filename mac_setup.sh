@@ -98,11 +98,13 @@ sudo chown -R $UID:$GID $HOME/Library/LaunchAgents/
 #   After installation, follow these steps:
 #     https://github.com/crisidev/homebrew-chunkwm
 #     https://github.com/koekeishiya/skhd
-#   Temporarily install cev to grab keycodes for configuration:
-#     brew install koekeishiya/formulae/cev
 "$brew_path" tap crisidev/homebrew-chunkwm \
   && "$brew_path" install --HEAD chunkwm
 "$brew_path" install koekeishiya/formulae/skhd
+#   Install qes (Quartz Event Synthesizer) to send keypresses
+"$brew_path" install chipsenkbeil/personal/qes
+#   Install cev to grab keycodes for configuration
+"$brew_path" install koekeishiya/formulae/cev
 
 # Install virt-manager and virt-viewer
 #   xquartz is a dependency for both
