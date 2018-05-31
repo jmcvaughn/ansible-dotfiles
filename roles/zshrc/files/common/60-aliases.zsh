@@ -1,4 +1,5 @@
 alias .="source"
+alias src="source $HOME/.zshrc"
 
 # sudo
 alias s="sudo "
