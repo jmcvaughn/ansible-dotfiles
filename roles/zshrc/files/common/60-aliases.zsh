@@ -40,3 +40,7 @@ alias ls="ls --color=auto"
 # tree
 alias tre="tree -C"
 
+# tmux
+alias ta="tmux attach-session -t"
+alias tl="tmux list-sessions"
+
