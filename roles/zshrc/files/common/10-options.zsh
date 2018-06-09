@@ -5,7 +5,9 @@
 setopt auto_cd
 
 # Completion
+setopt complete_in_word
 setopt list_packed
+setopt menu_complete
 
 # Expansion and Globbing
 setopt brace_ccl
