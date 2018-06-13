@@ -1,5 +1,6 @@
 # Update
 ud() {
-    pikaur -Syu && sudo pacman -Rsn --noconfirm $(pacman -Qdtq) 2> /dev/null
+    pikaur -Syu "$@" && sudo pacman -Rsn --noconfirm $(pacman -Qdtq) \
+      2> /dev/null
 }
 
