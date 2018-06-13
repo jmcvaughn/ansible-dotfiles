@@ -58,6 +58,7 @@ fi
   ansible \
   aria2 \
   cask \
+  google-chrome \
   htop \
   neovim \
   pandoc \
