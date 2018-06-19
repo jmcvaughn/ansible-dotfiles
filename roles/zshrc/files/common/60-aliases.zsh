@@ -40,6 +40,7 @@ alias ls="ls --color=auto"
 
 # tree
 alias tre="tree -C"
+alias tree="tree -C"
 
 # tmux
 alias tm="tmux new-session"
