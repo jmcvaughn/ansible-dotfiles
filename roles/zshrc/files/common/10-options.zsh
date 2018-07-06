@@ -37,6 +37,9 @@ setopt interactive_comments
 # Prompting
 setopt prompt_subst
 
+# Shell Emulation
+setopt ksh_arrays
+
 # ZLE
 unsetopt beep
 
