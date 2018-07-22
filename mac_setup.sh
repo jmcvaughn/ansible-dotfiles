@@ -77,6 +77,7 @@ fi
 
 # Install GUI applications
 "$brew_path" cask install \
+  android-platform-tools \
   displaycal \
   drawio \
   firefox \
