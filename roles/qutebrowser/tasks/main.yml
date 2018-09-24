@@ -1,8 +1,8 @@
 - name: Configure qutebrowser on Linux
-  include: linux.yml
+  import_tasks: linux.yml
   when: ansible_distribution | lower is search('linux')
 
 - name: Configure qutebrowser on Mac
-  include: mac.yml
+  import_tasks: mac.yml
   when: ansible_distribution | lower is search('mac')
 

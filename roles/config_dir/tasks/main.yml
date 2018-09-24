@@ -1,8 +1,8 @@
 - name: Set configuration directory for Linux
-  include: linux.yml
+  import_tasks: linux.yml
   when: ansible_distribution | lower is search('linux')
 
 - name: Set configuration directory for Mac
-  include: mac.yml
+  import_tasks: mac.yml
   when: ansible_distribution | lower is search('mac')
 

@@ -1,8 +1,8 @@
 - name: Configure mpv for Linux
-  include: linux.yml
+  import_tasks: linux.yml
   when: ansible_distribution | lower is search('linux')
 
 - name: Configure mpv for Mac
-  include: mac.yml
+  import_tasks: mac.yml
   when: ansible_distribution | lower is search('mac')
 

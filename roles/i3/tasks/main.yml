@@ -14,7 +14,7 @@
   register: intel_backlight
 
 - name: Enable display brightness manipulation
-  include: display_brightness.yml
+  import_tasks: display_brightness.yml
   when: intel_backlight.stat.isdir is defined and intel_backlight.stat.isdir
 
 - name: Check MacBook keyboard sys directory exists
@@ -23,5 +23,5 @@
   register: kbd_backlight
 
 - name: Enable MacBook keyboard brightness manipulation
-  include: macbook_kbd_brightness.yml
+  import_tasks: macbook_kbd_brightness.yml
   when: kbd_backlight.stat.isdir is defined and kbd_backlight.stat.isdir
