@@ -11,7 +11,7 @@ gitconfig:
   - { name: alias.stat, value: status }
 
 kitty:
-  font_size: 11
+  font_size: 11.5
 
 qutebrowser:
   font_size: 12pt
