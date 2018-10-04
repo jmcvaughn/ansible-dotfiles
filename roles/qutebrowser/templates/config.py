@@ -183,7 +183,7 @@ c.messages.timeout = 7000
 
 c.new_instance_open_target = 'window'
 
-c.scrolling.bar = True
+c.scrolling.bar = 'always'
 
 c.statusbar.padding = {
     'bottom': 8,
