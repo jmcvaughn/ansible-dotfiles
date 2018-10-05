@@ -1,5 +1,5 @@
 # Homebrew
-alias ud="brew update && brew upgrade"
+alias ud="brew update && brew upgrade && brew cask upgrade && brew cleanup"
 
 # Neovim
 alias vi="nvim"
