@@ -64,7 +64,8 @@ bindsym $mod+Shift+q kill
 
 # Rofi
 bindsym $mod+space exec \
-    "i3-dmenu-desktop --entry-type=name --dmenu='rofi -dmenu -p application:'"
+    "i3-dmenu-desktop --entry-type=name --dmenu='rofi -dmenu -p application -i'"
+bindsym $mod+m exec "rofi -show calc -no-show-match -no-sort"
 bindsym $mod+w exec "rofi -show window"
 
 # Focus
