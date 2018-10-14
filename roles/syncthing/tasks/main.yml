@@ -12,7 +12,7 @@
 - name: Enable and start Syncthing service (user)
   systemd:
     name: syncthing.service
-    user: True
+    scope: user
     enabled: True
     state: started
   when: syncthing.service_type == 'user'
