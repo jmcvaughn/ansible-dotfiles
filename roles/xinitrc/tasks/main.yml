@@ -11,4 +11,4 @@
     block: |
       /usr/bin/xcalib -display :0 \
         "/usr/local/share/color/icc/Color LCD-933C106C-08BC-09AA-F750-C2A74A119DEF.icc"
-  when: ansible_product_name | match('MacBookAir6,2')
+  when: ansible_product_name is match('MacBookAir6,2')
