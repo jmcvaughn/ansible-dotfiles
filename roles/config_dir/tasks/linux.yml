@@ -7,7 +7,7 @@
 - name: Set configuration to default
   set_fact:
     config_dir: ~/.config/
-  when: set_config_dir_xdg | failed
+  when: set_config_dir_xdg is failed
 
 - name: Create configuration directory
   become: True
