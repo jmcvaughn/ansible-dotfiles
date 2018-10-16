@@ -19,10 +19,13 @@ Duplex:         DuplexNoTumble
 
 ## Telegram Desktop
 Deselect:
-- `Show senders name`
-- `Play sound`
+- `Notifications/Show senders name`
+- `Notifications/Play sound`
 
-Set notifications to appear top right, download path to `~/downloads/telegram/`.
+Set:
+- `Default interface scale`: Off/100%
+- `Notifications/Location on the screen`: Top right
+- `Advanced/Download path`: `~/downloads/telegram/`
 
 Set ttohin's [gruvbox
 theme](https://github.com/ttohin/tdesktop-gruvbox-dark-medium/).
@@ -30,8 +33,11 @@ theme](https://github.com/ttohin/tdesktop-gruvbox-dark-medium/).
 ## Syncthing
 - Add devices, compress all data
 - Add `~/bin/`, `~/documents/` and `.dotfiles_synced/` directories
-- Enable `Fs Watcher` for each directory: *Actions > Advanced > DIRECTORY > Fs Watcher Enabled*
 - Run `.dotfiles_synced/link.sh` as user
+
+## PGP keys
+- Import PGP keys
+- Add auth subkey keygrips to `~/.gnupg/sshcontrol`
 
 ## qutebrowser
 Run `:adblock-update`
