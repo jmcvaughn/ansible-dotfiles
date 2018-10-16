@@ -4,7 +4,10 @@
   # See xserver(1)
   exec startx -- \
     -ardelay {{ zprofile.repeat_delay }} \
-    -arinterval {{ zprofile.repeat_interval }}
+    -arinterval {{ zprofile.repeat_interval }} \
+{% if dpi is defined %}
+    -dpi {{ dpi }}
+{% endif %}
 
 # Use gpg-agent as SSH agent
 # Taken from gpg-agent(1) - set SSH agent socket

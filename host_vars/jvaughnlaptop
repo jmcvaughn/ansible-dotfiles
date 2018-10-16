@@ -1,13 +1,9 @@
-i3_local:
-  font_size: 9
+dpi: 109
 
 polybar_local:
   wifi_interface: wlp3s0
   title_length: 55
   modules_right: volume wifi battery date
-
-qutebrowser_local:
-  font_size: 9pt
 
 zshrc:
   prompt_colour: green

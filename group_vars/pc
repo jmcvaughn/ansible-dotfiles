@@ -4,8 +4,16 @@ gtk2:
 gtk3:
   font_size: 10
 
+i3:
+  browser: firefox
+  font_size: 8
+
 kitty:
   font_size: 8.0
+
+qutebrowser:
+  font_size: 8pt
+  hint_size: 13px
 
 rofi:
   font_size: 9
@@ -24,23 +32,11 @@ zprofile:
   repeat_delay: 275
   repeat_interval: 37
 
-# i3
-i3_pc:
-  browser: firefox
-
-i3: '{{ i3_pc | combine(i3_local) }}'
-
 # polybar
 polybar_pc:
   font_size: 9
 
 polybar: '{{ polybar_pc | combine(polybar_local) }}'
-
-# qutebrowser
-qutebrowser_pc:
-  hint_size: 13px
-
-qutebrowser: '{{ qutebrowser_pc | combine(qutebrowser_local) }}'
 
 # vim: set filetype=yaml:
 
