@@ -131,10 +131,10 @@ mode "resize" {
 }
 
 # Theming
-gaps inner 10
-gaps outer  5
+gaps inner 5
+gaps outer 5
 # Disable titlebars, set border
-for_window [class="^.*"] border pixel 4
+for_window [class="^.*"] border pixel 3
 # <colorclass>          <border> <background> <text>  <indicator> <child_border>
 client.focused          $bg4     $bg4         $bg     $fg3        $bg4
 client.focused_inactive $bg1     $bg1         $grey   $bg2        $bg1
