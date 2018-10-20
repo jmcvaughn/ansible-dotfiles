@@ -1,5 +1,8 @@
+# Shell built-ins
 alias .="source"
 alias src="source $HOME/.zshrc"
+alias psd="pushd"
+alias pod="popd"
 
 # sudo
 alias s="sudo "
@@ -46,4 +49,5 @@ alias tree="tree -C"
 alias tm="tmux new-session"
 alias ta="tmux attach-session -t"
 alias tl="tmux list-sessions"
+alias tk="tmux kill-session -t"
 

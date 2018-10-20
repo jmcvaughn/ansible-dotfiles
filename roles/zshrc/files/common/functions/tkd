@@ -1,0 +1,7 @@
+# Kill all detatched sessions
+tka() {
+    for i in $(tmux list-sessions | awk -F ':' '!/attached/ { print $1 }'); do
+        tmux kill-session -t "$i"
+    done
+}
+
