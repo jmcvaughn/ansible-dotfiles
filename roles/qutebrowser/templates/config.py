@@ -204,6 +204,7 @@ c.tabs.padding = {
 }
 c.tabs.title.format = '{index}: ({scroll_pos}) {private}{perc}{title}'
 c.tabs.title.format_pinned = '{index}: ({scroll_pos})'
+c.tabs.wrap = False
 
 c.url.auto_search = 'dns'
 c.url.searchengines = {
