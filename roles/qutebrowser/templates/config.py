@@ -183,6 +183,13 @@ c.messages.timeout = 7000
 
 c.new_instance_open_target = 'window'
 
+c.qt.args = [
+    'enable-checker-imaging',
+    'enable-gpu-rasterization',
+    'enable-native-gpu-memory-buffers',
+    'ignore-gpu-blacklist',
+]
+
 c.scrolling.bar = 'always'
 
 c.statusbar.padding = {
