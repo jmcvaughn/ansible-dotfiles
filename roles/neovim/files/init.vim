@@ -33,9 +33,8 @@ let &showbreak = '\ '
 set dictionary+=/usr/share/hunspell/en_GB.dic
 set thesaurus+=/usr/share/mythes/th_en_GB_v2.dat
 
-" Formatting and wrapping
+" Formatting
 set formatoptions+=1        " Insert line break after one letter word
-set textwidth=80            " This is changed below for certain filetypes
 
 " Buffers
 set hidden
@@ -68,14 +67,15 @@ setlocal tabstop=4          " Display tabs as four spaces
 " Programming languages
 autocmd FileType c,cpp setlocal expandtab& shiftwidth& tabstop&
 autocmd FileType python setlocal textwidth=79
-autocmd FileType yaml setlocal expandtab shiftwidth=0 tabstop=2
+autocmd FileType yaml setlocal shiftwidth=0 tabstop=2
 
 " LaTeX
 autocmd FileType bib,tex
-    \ setlocal expandtab shiftwidth=0 tabstop=2 spell textwidth&
+    \ setlocal expandtab shiftwidth=0 spell tabstop=2
 
 " Other written language
 autocmd FileType gitcommit,markdown setlocal spell
+autocmd FileType gitcommit setlocal expandtab& shiftwidth& tabstop&
 
 
 " Custom commands
@@ -88,3 +88,4 @@ command Gitmd2html :write |
 
 " LaTeX to PDF
 command Latex2pdf !latexmk -output-directory=aux -pdf main.tex
+
