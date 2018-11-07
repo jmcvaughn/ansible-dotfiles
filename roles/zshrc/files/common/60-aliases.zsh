@@ -14,6 +14,7 @@ alias sudo="sudo "
 alias diff="diff --color=auto"
 alias grep="grep --color=auto"
 alias les="less"
+alias lesn="less --LINE-NUMBERS"
 alias o="open"
 
 # Process management

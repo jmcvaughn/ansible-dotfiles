@@ -12,7 +12,6 @@ export PATH="$PATH:$HOME/bin"
 local less_opts=(
     "--quit-if-one-screen"
     "--ignore-case"
-    "--LINE-NUMBERS"
     "--RAW-CONTROL-CHARS"
     "--HILITE-UNREAD"
     "--no-init"
