@@ -28,6 +28,7 @@ export HOMEBREW_NO_ANALYTICS=1
   grep \
   gnu-sed \
   gnu-tar \
+"$brew_path" install diffutils
 
 # Install pinentry-mac (for GnuPG)
 "$brew_path" install pinentry-mac
