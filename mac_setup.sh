@@ -91,6 +91,9 @@ fi
   switchresx \
   whichspace \
 
+# Install wkhtmltopdf to allow pandoc to create PDFs
+"$brew_path" cask install wkhtmltopdf
+
 # Install kitty
 #   ImageMagick required for viewing images using 'kitty icat'
 "$brew_path" install imagemagick \
