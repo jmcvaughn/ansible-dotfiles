@@ -27,7 +27,7 @@ export HOMEBREW_NO_ANALYTICS=1
   findutils \
   grep \
   gnu-sed \
-  gnu-tar \
+  gnu-tar
 "$brew_path" install diffutils
 
 # Install pinentry-mac (for GnuPG)
@@ -40,7 +40,7 @@ export HOMEBREW_NO_ANALYTICS=1
   zsh-syntax-highlighting \
   source-highlight \
   tree \
-  tmux \
+  tmux
 
 # Install Homebrew OpenSSH
 "$brew_path" install openssh --with-ldns
@@ -64,7 +64,7 @@ fi
   pandoc \
   picocom \
   sipcalc \
-  wget \
+  wget
 
 # Install rmtree
 "$brew_path" tap beeftornado/rmtree
@@ -89,7 +89,7 @@ fi
   mpv \
   slack \
   switchresx \
-  whichspace \
+  whichspace
 
 # Install wkhtmltopdf to allow pandoc to create PDFs
 "$brew_path" cask install wkhtmltopdf
