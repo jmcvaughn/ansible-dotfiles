@@ -1,3 +1,7 @@
+syncthing:
+  gui_address: 0.0.0.0:8384
+  service_type: system
+
 zshrc:
   prompt_colour: yellow
 

@@ -31,7 +31,7 @@ Set ttohin's [gruvbox
 theme](https://github.com/ttohin/tdesktop-gruvbox-dark-medium/).
 
 ## Syncthing
-- Add devices, compress all data
+- Enable GUI authentication if required
 - Add `~/bin/`, `~/documents/` and `.dotfiles_synced/` directories
 - Run `.dotfiles_synced/link.sh` as user
 

@@ -7,3 +7,5 @@
     - { role: neovim, tags: neovim }
     - { role: gitconfig, tags: gitconfig }
     - { role: inputrc, tags: inputrc }
+    - { role: syncthing, tags: syncthing }
+
