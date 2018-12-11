@@ -94,6 +94,13 @@ command Gitmd2html :write |
   \ --toc --toc-depth 6
   \ --self-contained --css $HOME/git/markdown-css/github.css
 
+" Convert GitHub Flavored Markdown to PDF
+command Gitmd2pdf :write |
+  \ !pandoc --from markdown_github-hard_line_breaks --to html5
+  \ --output %:r.pdf %
+  \ --toc --toc-depth 6
+  \ --self-contained --css $HOME/git/markdown-css/github.css
+
 " LaTeX to PDF
 command Latex2pdf !latexmk -output-directory=aux -pdf main.tex
 
