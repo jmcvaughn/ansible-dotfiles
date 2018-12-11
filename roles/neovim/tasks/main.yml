@@ -11,8 +11,8 @@
     path: ~/git/
     state: directory
 
-- name: Clone otsaloma's markdown-css repository (for GitHub Markdown previews)
+- name: Clone v0rn's fork of otsaloma's markdown-css repository (for GitHub Markdown previews)
   git:
-    repo: https://github.com/otsaloma/markdown-css.git
+    repo: https://github.com/v0rn/markdown-css.git
     dest: ~/git/markdown-css/
 
