@@ -75,7 +75,7 @@ set tabstop=2  " Display tabs as n spaces
 " Programming languages
 autocmd FileType c,cpp set expandtab& shiftwidth& tabstop&
 autocmd FileType python set textwidth=79
-autocmd FileType yaml set shiftwidth=0 tabstop=2
+autocmd FileType yaml set shiftwidth=0 tabstop=2 textwidth=80
 
 " LaTeX
 autocmd FileType bib,tex
